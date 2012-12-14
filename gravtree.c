@@ -15,7 +15,7 @@ double force_add_ryan(long int particle);//, int i);
 double force_add_ryan(long int particle){//, int i){
   //calcute the force due to black hole
   //assume G = 1, M = Msun, R = Rsun
-  double bhmass = 1.e6;
+  double bhmass = All.BHmass_ryan;
   double pos[3];//,vel[3];
   
   int i = 0;
