@@ -386,6 +386,8 @@ void read_parameter_file(char *fname)
       addr[nt] = &All.HubbleParam;
       id[nt++] = DOUBLE;
 
+      
+
       strcpy(tag[nt], "BoxSize");
       addr[nt] = &All.BoxSize;
       id[nt++] = DOUBLE;
@@ -585,6 +587,20 @@ void read_parameter_file(char *fname)
       strcpy(tag[nt], "MinGasTemp");
       addr[nt] = &All.MinGasTemp;
       id[nt++] = DOUBLE;
+
+      //added by ryan
+      strcpy(tag[nt], "BHmass_ryan");
+      addr[nt] = &All.BHmass_ryan;
+      id[nt++] = DOUBLE;
+
+      strcpy(tag[nt], "rp_ryan");
+      addr[nt] = &All.rp_ryan;
+      id[nt++] = DOUBLE;
+
+      strcpy(tag[nt], "vsurf_ryan");
+      addr[nt] = &All.vsurf_ryan;
+      id[nt++] = DOUBLE;
+
 
       if((fd = fopen(fname, "r")))
 	{

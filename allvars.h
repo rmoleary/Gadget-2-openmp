@@ -461,7 +461,9 @@ extern struct global_data_all_processes
                                      If particle masses are all equal for one type, the corresponding entry in MassTable 
                                      is set to this value, allowing the size of the snapshot files to be reduced. */
   
-
+  double BHmass_ryan;  //bhmass for ryan
+  double rp_ryan; //pericenter distance for ryan
+  double vsurf_ryan; //surfaceveloctiy for ryan
 
   /* some filenames */
 

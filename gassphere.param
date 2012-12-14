@@ -121,7 +121,9 @@ SofteningStarsMaxPhys     0
 SofteningBndryMaxPhys     0
 
 
-
+BHmass_ryan    1.e6
+rp_ryan        80.
+vsurf_ryan     0.
 
 
 
