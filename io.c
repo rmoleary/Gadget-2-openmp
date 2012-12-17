@@ -129,7 +129,7 @@ void savepositions(int num)
 void fill_write_buffer(enum iofields blocknr, int *startindex, int pc, int type)
 {
   int n, k, pindex;
-  float *fp;
+  FLOAT *fp;
 
 #ifdef LONGIDS
   long long *ip;
@@ -372,7 +372,7 @@ int get_bytes_per_blockelement(enum iofields blocknr)
     case IO_POS:
     case IO_VEL:
     case IO_ACCEL:
-      bytes_per_blockelement = 3 * sizeof(float);
+      bytes_per_blockelement = 3 * sizeof(FLOAT);
       break;
 
     case IO_ID:
@@ -390,7 +390,7 @@ int get_bytes_per_blockelement(enum iofields blocknr)
     case IO_POT:
     case IO_DTENTR:
     case IO_TSTP:
-      bytes_per_blockelement = sizeof(float);
+      bytes_per_blockelement = sizeof(FLOAT);
       break;
     }
 
