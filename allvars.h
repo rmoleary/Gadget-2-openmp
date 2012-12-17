@@ -464,6 +464,7 @@ extern struct global_data_all_processes
   double BHmass_ryan;  //bhmass for ryan
   double rp_ryan; //pericenter distance for ryan
   double vsurf_ryan; //surfaceveloctiy for ryan
+  double xchange_ryan; // xstart for ryan
 
   /* some filenames */
 

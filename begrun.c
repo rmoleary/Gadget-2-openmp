@@ -630,6 +630,10 @@ void read_parameter_file(char *fname)
       addr[nt] = &All.vsurf_ryan;
       id[nt++] = DOUBLE;
 
+      strcpy(tag[nt], "xchange_ryan");
+      addr[nt] = &All.xchange_ryan;
+      id[nt++] = DOUBLE;
+
 
       if((fd = fopen(fname, "r")))
 	{

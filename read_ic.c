@@ -154,13 +154,16 @@ void read_ic(char *fname)
       printf("relaxing... enjoy the smooth sound\n");
 #endif
       printf("flag_entropy:  %d\n",header.flag_entropy_instead_u);
+      printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
       //Ryan ; move star and rotate star assuming solid body rotation and star at com
     }
     All.MassTable[1] = All.BHmass_ryan;
 ////    int i;
     int k;
-    double xchange = 4000;
-    double ychange = sqrt(.5*((sqrt(All.rp_ryan*All.rp_ryan*(All.rp_ryan*All.rp_ryan+4.*xchange*xchange)))+All.rp_ryan*All.rp_ryan));
+    double xchange = All.xchange_ryan;
+    double rpt = All.rp_ryan/xchange*pow(All.BHmass_ryan/1.e6,1./3.);
+    double ychange = xchange*(sqrt(rpt*rpt+rpt*sqrt(rpt*rpt+4.))/sqrt(2.));
+    //double ychange = sqrt(.5*((sqrt(All.rp_ryan*All.rp_ryan*(All.rp_ryan*All.rp_ryan+4.*xchange*xchange)))+All.rp_ryan*All.rp_ryan));
     double vchange = sqrt(2.*All.BHmass_ryan/sqrt(xchange*xchange+ychange*ychange));
     printf("Ryan move star with rotation  bhmass %g x %g  y %g  v %g \n",All.BHmass_ryan,xchange,ychange,vchange);
     //first check com
@@ -176,8 +179,8 @@ void read_ic(char *fname)
     printf("Ryan check com  %g %g %g   %g %g %g \n", com[0],com[1],com[2],cov[0],cov[1],cov[2]);
     for (i = 0; i< NumPart; i++){
       //first rotate assume axis is z direction
-      P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1];
-      P[i].Vel[1] += All.vsurf_ryan*P[i].Pos[0]-vchange;
+      P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1]+vchange;
+      P[i].Vel[1] += All.vsurf_ryan*P[i].Pos[0];
       //then move
       P[i].Pos[0] += xchange;
       P[i].Pos[1] += ychange;
