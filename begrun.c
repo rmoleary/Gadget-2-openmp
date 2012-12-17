@@ -136,12 +136,24 @@ void begrun(void)
   else{
     All.Ti_nextoutput = find_next_outputtime(All.Ti_Current);
     //Ryan ; move star and rotate star assuming solid body rotation and star at com
-    All.MassTable[0] = All.BHmass_ryan;
+    /*    All.MassTable[1] = All.BHmass_ryan;
     int i;
+    int k;
     double xchange = 4000;
     double ychange = sqrt(2.*((sqrt(All.rp_ryan*All.rp_ryan*(All.rp_ryan*All.rp_ryan+4.*xchange*xchange)))+All.rp_ryan*All.rp_ryan));
     double vchange = sqrt(2.*All.BHmass_ryan/sqrt(xchange*xchange+ychange*ychange));
     printf("Ryan move star with rotation  bhmass %g x %g  y %g  v %g \n",All.BHmass_ryan,xchange,ychange,vchange);
+    //first check com
+    double com[3];
+    double cov[3];
+    double inum = 1./NumPart;
+    for (i = 0; i< NumPart; i++){
+      for (k = 0; k < 3; k++){
+	com[k] +=P[i].Pos[k]*inum;
+	cov[k] +=P[i].Vel[k]*inum;
+      }
+    }
+    printf("Ryan check com  %g %g %g   %g %g %g \n", com[0],com[1],com[2],cov[0],cov[1],cov[2]);
     for (i = 0; i< NumPart; i++){
       //first rotate assume axis is z direction
       P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1];
@@ -150,7 +162,7 @@ void begrun(void)
       P[i].Pos[0] += xchange;
       P[i].Pos[1] += ychange;
 
-    }
+      } */
   }
 
 

@@ -11,8 +11,8 @@
 #--------------------------------------- Basic operation mode of code
 #OPT   +=  -DPERIODIC 
 OPT   +=  -DUNEQUALSOFTENINGS
-OPT   +=  -DPN1
-OPT   +=  -DPN15
+#OPT   +=  -DPN1
+#OPT   +=  -DPN15
 #OPT   +=  -DRELAX
 #--------------------------------------- Things that are always recommended
 OPT   +=  -DPEANOHILBERT
