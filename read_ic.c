@@ -208,7 +208,7 @@ void read_ic(char *fname)
 void empty_read_buffer(enum iofields blocknr, int offset, int pc, int type)
 {
   int n, k;
-  float *fp;
+  FLOAT *fp;
 
 #ifdef LONGIDS
   long long *ip;
