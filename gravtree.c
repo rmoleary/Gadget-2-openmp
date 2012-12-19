@@ -66,7 +66,7 @@ double force_add_ryan(long int particle){//, int i){
 #ifdef MOVE
     force[i] = -bhmdistsq * pos[i];
 #else
-    force[i] = -bhmdistsq * pos[i]+cforce[i];
+    force[i] = -bhmdistsq * pos[i]-cforce[i];
 #endif
   }
   
