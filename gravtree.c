@@ -19,10 +19,39 @@ double force_add_ryan(long int particle){//, int i){
   double pos[3];//,vel[3];
   
   int i = 0;
+#ifdef MOVE
   pos[0] = P[particle].Pos[0];
   pos[1] = P[particle].Pos[1];
   pos[2] = P[particle].Pos[2];
+#else
+  double bhpos[3];
+  //use current time? to calculate the position of the bh in frame of com of star
+  //then calculate offset positions, and offset velocities, and subtract normal force
+
+  double A, B;
+  double currenttime = All.Time-All.xchange_ryan;
+  A = 1.5*sqrt(.5)*currenttime;
+  B = pow((A+sqrt(A*A+1.)),1./3.);
+  double nu = 2.*atan(B-1./B);
+  double bhcdist = 2./(1.+cos(nu))*All.rp_ryan*pow(All.BHmass_ryan/1.e6,1./3.);
+  bhpos[0] = bhcdist*sin(nu);
+  bhpos[1] = -bhcdist*cos(nu);
+  bhpos[2] = 0.;
+ 
+  pos[0] = P[particle].Pos[0]-bhpos[0];
+  pos[1] = P[particle].Pos[1]-bhpos[1];
+  pos[2] = P[particle].Pos[2]-bhpos[2];
+
+  double cforce[3];
+  // double bhcdistsq = bhpos[0]*bhpos[0]+bhpos[1]*bhpos[1]+bhpos[2]*bhpos[2];
+  //  double bhcdist = sqrt(bhcdistsq);
+  double ctforce = bhmass/bhcdist/bhcdist/bhcdist;
   
+  cforce[0] = ctforce*bhpos[0];
+  cforce[1] = ctforce*bhpos[1];
+  cforce[2] = ctforce*bhpos[2];
+
+#endif
   //vel = P[particle].Vel;
   double distsq = pos[0]*pos[0]+pos[1]*pos[1]+pos[2]*pos[2];
   double dist = sqrt(distsq);
@@ -34,10 +63,15 @@ double force_add_ryan(long int particle){//, int i){
   double bhmdistsq = bhmass/distsq;
   double bhmdist = bhmass/dist;
   for(i= 0; i < 3; i++){
+#ifdef MOVE
     force[i] = -bhmdistsq * pos[i];
+#else
+    force[i] = -bhmdistsq * pos[i]+cforce[i];
+#endif
   }
   
 #ifdef PN1
+#ifdef MOVE
   double vel[3];
   double invc= 0.00145713545; 
   vel[0] = P[particle].Vel[0]*invc;
@@ -77,6 +111,7 @@ double force_add_ryan(long int particle){//, int i){
   
   
 #endif //end pn15
+#endif //end move (no pnextensions right now
 #endif //end pn1
   P[particle].GravAccel[0] += force[0];
   P[particle].GravAccel[1] += force[1];

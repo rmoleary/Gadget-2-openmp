@@ -157,7 +157,11 @@ void read_ic(char *fname)
       printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
       //Ryan ; move star and rotate star assuming solid body rotation and star at com
     }
+#ifdef MOVE
     All.MassTable[1] = All.BHmass_ryan;
+#else
+    All.MassTable[1] = -1.*All.BHmass_ryan;
+#endif
 ////    int i;
     int k;
     double xchange = All.xchange_ryan;
@@ -179,11 +183,14 @@ void read_ic(char *fname)
     printf("Ryan check com  %g %g %g   %g %g %g \n", com[0],com[1],com[2],cov[0],cov[1],cov[2]);
     for (i = 0; i< NumPart; i++){
       //first rotate assume axis is z direction
-      P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1]+vchange;
+      P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1];
       P[i].Vel[1] += All.vsurf_ryan*P[i].Pos[0];
       //then move
+#ifdef MOVE
+      P[i].Vel[0] -=vchange;
       P[i].Pos[0] += xchange;
       P[i].Pos[1] += ychange;
+#endif
 
     }
  
