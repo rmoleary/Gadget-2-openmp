@@ -30,10 +30,11 @@ double force_add_ryan(long int particle){//, int i){
 
   double A, B;
   double currenttime = All.Time-All.xchange_ryan;
-  A = 1.5*sqrt(.5)*currenttime;
+  double  rpt = All.rp_ryan*pow(All.BHmass_ryan/1.e6,1./3.);
+  A = 1.5*sqrt(All.BHmass_ryan/2./rpt/rpt/rpt)*currenttime;
   B = pow((A+sqrt(A*A+1.)),1./3.);
   double nu = 2.*atan(B-1./B);
-  double bhcdist = 2./(1.+cos(nu))*All.rp_ryan*pow(All.BHmass_ryan/1.e6,1./3.);
+  double bhcdist = 2./(1.+cos(nu))*rpt;
   bhpos[0] = bhcdist*sin(nu);
   bhpos[1] = -bhcdist*cos(nu);
   bhpos[2] = 0.;
