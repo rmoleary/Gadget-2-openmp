@@ -36,7 +36,8 @@ OPT   +=  -DDOUBLEPRECISION
 #--------------------------------------- Time integration options
 OPT   +=  -DSYNCHRONIZATION
 #OPT   +=  -DFLEXSTEPS
-#OPT   +=  -DPSEUDOSYMMETRIC
+OPT   +=  -DPSEUDOSYMMETRIC
+OPT   +=  -DSHORTSTEP #added by ryan for TDEs
 #OPT   +=  -DNOSTOP_WHEN_BELOW_MINTIMESTEP
 #OPT   +=  -DNOPMSTEPADJUSTMENT
 

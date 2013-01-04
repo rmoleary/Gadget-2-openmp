@@ -42,14 +42,6 @@ void advance_and_find_timesteps(void)
   double disp, dispmax, globmax, dmean, fac, disp2sum, globdisp2sum;
 #endif
 
-#ifdef SHORTSTEP
-  double dtcheck;
-  double tnaught = .0001;
-  dtcheck = pow(All.Time*All.Time+tnaught,1./3.)*1.e-4*All.ShortStep;
-  All.MaxSizeTimestep = dtcheck;
-  if(All.MaxSizeTimestep > All.oMaxSizeTimestep) All.MaxSizeTimestep = All.oMaxSizeTimestep;
-#endif
-
   t0 = second();
 
   if(All.ComovingIntegrationOn)

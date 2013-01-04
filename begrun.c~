@@ -135,10 +135,6 @@ void begrun(void)
     All.Ti_nextoutput = find_next_outputtime(All.Ti_Current + 1);
   else{
     All.Ti_nextoutput = find_next_outputtime(All.Ti_Current);
-
-#ifdef SHORTSTEP
-    All.oMaxSizeTimestep = All.MaxSizeTimestep;
-#endif
     //Ryan ; move star and rotate star assuming solid body rotation and star at com
     /*    All.MassTable[1] = All.BHmass_ryan;
     int i;
@@ -638,11 +634,6 @@ void read_parameter_file(char *fname)
       addr[nt] = &All.xchange_ryan;
       id[nt++] = DOUBLE;
 
-#ifdef SHORTSTEP
-      strcpy(tag[nt], "ShortStep");
-      addr[nt] = &All.ShortStep;
-      id[nt++] = DOUBLE;
-#endif SHORTSTEP
 
       if((fd = fopen(fname, "r")))
 	{
