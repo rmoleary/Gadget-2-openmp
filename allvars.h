@@ -419,7 +419,7 @@ extern struct global_data_all_processes
 #ifdef SHORTSTEP
   double oMaxSizeTimestep;
   double ShortStep;
-#endif SHORTSTEP
+#endif 
   double MaxRMSDisplacementFac; /*!< this determines a global timestep criterion for cosmological simulations
                                      in comoving coordinates.  To this end, the code computes the rms velocity
                                      of all particles, and limits the timestep such that the rms displacement
