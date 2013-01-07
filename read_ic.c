@@ -181,10 +181,36 @@ void read_ic(char *fname)
       }
     }
     printf("Ryan check com  %g %g %g   %g %g %g \n", com[0],com[1],com[2],cov[0],cov[1],cov[2]);
+
+#ifdef ARBROTATE
+    printf("Ryan arbitrary rotate\n");
+    double rot[3];
+    rot[0] = 1.;
+    rot[1] = 2.;
+    rot[2] = .1;
+    double dr;
+    dr = rot[0]*rot[0]+rot[1]*rot[1]+rot[2]*rot[2];
+    dr = All.vsurf_ryan/sqrt(dr);
+    rot[0] *= dr;
+    rot[1] *= dr;
+    rot[2] *= dr;
+
+    printf("Ryan arbitrary rotate %g %g %g \n",rot[0], rot[1], rot[2]);
+    
+#endif
     for (i = 0; i< NumPart; i++){
+
+#ifdef ARBROTATE
+      //use crossproduce to get velocity
+      P[i].Vel[0] = rot[1]*P[i].Pos[2]-rot[2]*P[i].Pos[1];
+      P[i].Vel[1] = rot[2]*P[i].Pos[0]-rot[0]*P[i].Pos[2];
+      P[i].Vel[2] = rot[0]*P[i].Pos[1]-rot[1]*P[i].Pos[0];
+
+#else
       //first rotate assume axis is z direction
       P[i].Vel[0] -= All.vsurf_ryan*P[i].Pos[1];
       P[i].Vel[1] += All.vsurf_ryan*P[i].Pos[0];
+#endif
       //then move
 #ifdef MOVE
       P[i].Vel[0] -=vchange;

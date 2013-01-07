@@ -11,7 +11,6 @@
 #--------------------------------------- Basic operation mode of code
 #OPT   +=  -DPERIODIC 
 OPT   +=  -DUNEQUALSOFTENINGS
-OPT   +=  -DARBROTATE
 #OPT   +=   -DMOVE
 #OPT   +=  -DPN1
 #OPT   +=  -DPN15
@@ -64,7 +63,7 @@ OPT   +=  -DOUTPUTTIMESTEP
 OPT   +=  -DCOMPUTE_POTENTIAL_ENERGY
 #OPT   +=  -DLONGIDS
 #OPT   +=  -DISOTHERM_EQS
-OPT   +=  -DADAPTIVE_GRAVSOFT_FORGAS
+#OPT   +=  -DADAPTIVE_GRAVSOFT_FORGAS
 #OPT   +=  -DSELECTIVE_NO_GRAVITY=2+4+8+16
 
 #--------------------------------------- Testing and Debugging options
