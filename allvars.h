@@ -469,6 +469,9 @@ extern struct global_data_all_processes
   double rp_ryan; //pericenter distance for ryan
   double vsurf_ryan; //surfaceveloctiy for ryan
   double xchange_ryan; // xstart for ryan
+#ifdef ARBROTATE
+  double VX,VY,VZ;
+#endif
 
   /* some filenames */
 

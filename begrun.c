@@ -642,8 +642,19 @@ void read_parameter_file(char *fname)
       strcpy(tag[nt], "ShortStep");
       addr[nt] = &All.ShortStep;
       id[nt++] = DOUBLE;
-#endif SHORTSTEP
+#endif 
 
+#ifdef ARBROTATE
+      strcpy(tag[nt], "VX");
+      addr[nt] = &All.VX;
+      id[nt++] = DOUBLE;
+      strcpy(tag[nt], "VY");
+      addr[nt] = &All.VY;
+      id[nt++] = DOUBLE;
+      strcpy(tag[nt], "VY");
+      addr[nt] = &All.VY;
+      id[nt++] = DOUBLE;
+#endif
       if((fd = fopen(fname, "r")))
 	{
 	  sprintf(buf, "%s%s", fname, "-usedvalues");

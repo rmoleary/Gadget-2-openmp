@@ -123,3 +123,6 @@ BHmass_ryan    4.e6
 rp_ryan        60.
 vsurf_ryan     .0
 xchange_ryan   0.  %is dt if MOVE is 0
+VX       1.
+VY       1.
+VZ       1.  %gets renormalized later to vsurf_ryan 

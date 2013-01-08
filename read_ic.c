@@ -185,9 +185,14 @@ void read_ic(char *fname)
 #ifdef ARBROTATE
     printf("Ryan arbitrary rotate\n");
     double rot[3];
-    rot[0] = 1.;
+    /*    rot[0] = 1.;
     rot[1] = 2.;
-    rot[2] = .1;
+    rot[2] = .1;*/
+    rot[0] = All.VX;
+    rot[1] = All.VY;
+    rot[2] = All.VZ;
+
+
     double dr;
     dr = rot[0]*rot[0]+rot[1]*rot[1]+rot[2]*rot[2];
     dr = All.vsurf_ryan/sqrt(dr);
