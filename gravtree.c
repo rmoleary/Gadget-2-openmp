@@ -427,13 +427,14 @@ void gravity_tree(void)
 	//P[i].GravAccel[0]+=force_add_ryan(i,0);
 	//P[i].GravAccel[1]+=force_add_ryan(i,1);
 	//P[i].GravAccel[2]+=force_add_ryan(i,2);
-	force_add_ryan(i);
+	//	force_add_ryan(i);
 
 	ax = P[i].GravAccel[0];//+force_add_ryan(i,0);
 	ay = P[i].GravAccel[1];//+force_add_ryan(i,1);
 	az = P[i].GravAccel[2];//+force_add_ryan(i,2);
 #endif
 	P[i].OldAcc = sqrt(ax * ax + ay * ay + az * az);
+	force_add_ryan(i); //moved force add here so that the opening criteria are determined by the star not the black hole acceleration
       }
 
 
