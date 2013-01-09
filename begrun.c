@@ -651,8 +651,8 @@ void read_parameter_file(char *fname)
       strcpy(tag[nt], "VY");
       addr[nt] = &All.VY;
       id[nt++] = DOUBLE;
-      strcpy(tag[nt], "VY");
-      addr[nt] = &All.VY;
+      strcpy(tag[nt], "VZ");
+      addr[nt] = &All.VZ;
       id[nt++] = DOUBLE;
 #endif
       if((fd = fopen(fname, "r")))
