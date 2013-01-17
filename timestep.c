@@ -45,7 +45,14 @@ void advance_and_find_timesteps(void)
 #ifdef SHORTSTEP
   double dtcheck;
   double tnaught = .0001;
-  dtcheck = pow(All.Time*All.Time+tnaught,1./3.)*1.e-4*All.ShortStep;
+  if(All.Time < 0) {
+    dtcheck = pow(All.Time*All.Time+tnaught,1./3.)*1.e-4*All.ShortStep;
+  }
+  else{
+    //time steps after disruption are half of before
+    dtcheck = pow(All.Time*All.Time/8.+tnaught,1./3.)*1.e-4*All.ShortStep;
+  }
+  
   All.MaxSizeTimestep = dtcheck;
   if(All.MaxSizeTimestep > All.oMaxSizeTimestep) All.MaxSizeTimestep = All.oMaxSizeTimestep;
 #endif
