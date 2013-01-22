@@ -43,7 +43,7 @@ void advance_and_find_timesteps(void)
 #endif
 
 #ifdef SHORTSTEP
-  double dtcheck;
+  /*  double dtcheck;
   double tnaught = .0001;
   if(All.Time < 0) {
     dtcheck = pow(All.Time*All.Time+tnaught,1./3.)*1.e-4*All.ShortStep;
@@ -55,152 +55,21 @@ void advance_and_find_timesteps(void)
   
   All.MaxSizeTimestep = dtcheck;
   if(All.MaxSizeTimestep > All.oMaxSizeTimestep) All.MaxSizeTimestep = All.oMaxSizeTimestep;
+  */
+  
 #endif
 
   t0 = second();
 
-  if(All.ComovingIntegrationOn)
-    {
-      fac1 = 1 / (All.Time * All.Time);
-      fac2 = 1 / pow(All.Time, 3 * GAMMA - 2);
-      fac3 = pow(All.Time, 3 * (1 - GAMMA) / 2.0);
-      hubble_a = All.Omega0 / (All.Time * All.Time * All.Time)
-	+ (1 - All.Omega0 - All.OmegaLambda) / (All.Time * All.Time) + All.OmegaLambda;
-
-      hubble_a = All.Hubble * sqrt(hubble_a);
-      a3inv = 1 / (All.Time * All.Time * All.Time);
-      atime = All.Time;
-    }
-  else
-    fac1 = fac2 = fac3 = hubble_a = a3inv = atime = 1;
-
-#ifdef NOPMSTEPADJUSTMENT
+  
   dt_displacement = All.MaxSizeTimestep;
-#else
-  if(Flag_FullStep || dt_displacement == 0)
-    find_dt_displacement_constraint(hubble_a * atime * atime);
-#endif
-
-#ifdef PMGRID
-  if(All.ComovingIntegrationOn)
-    dt_gravkickB = get_gravkick_factor(All.PM_Ti_begstep, All.Ti_Current) -
-      get_gravkick_factor(All.PM_Ti_begstep, (All.PM_Ti_begstep + All.PM_Ti_endstep) / 2);
-  else
-    dt_gravkickB = (All.Ti_Current - (All.PM_Ti_begstep + All.PM_Ti_endstep) / 2) * All.Timebase_interval;
-
-  if(All.PM_Ti_endstep == All.Ti_Current)	/* need to do long-range kick */
-    {
-      /* make sure that we reconstruct the domain/tree next time because we don't kick the tree nodes in this case */
-      All.NumForcesSinceLastDomainDecomp = 1 + All.TotNumPart * All.TreeDomainUpdateFrequency;
-    }
-#endif
-
-
-#ifdef MAKEGLASS
-  for(i = 0, dispmax = 0, disp2sum = 0; i < NumPart; i++)
-    {
-      for(j = 0; j < 3; j++)
-	{
-	  P[i].GravPM[j] *= -1;
-	  P[i].GravAccel[j] *= -1;
-	  P[i].GravAccel[j] += P[i].GravPM[j];
-	  P[i].GravPM[j] = 0;
-	}
-
-      disp = sqrt(P[i].GravAccel[0] * P[i].GravAccel[0] +
-		  P[i].GravAccel[1] * P[i].GravAccel[1] + P[i].GravAccel[2] * P[i].GravAccel[2]);
-
-      disp *= 2.0 / (3 * All.Hubble * All.Hubble);
-
-      disp2sum += disp * disp;
-
-      if(disp > dispmax)
-	dispmax = disp;
-    }
-
-  MPI_Allreduce(&dispmax, &globmax, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
-  MPI_Allreduce(&disp2sum, &globdisp2sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-
-  dmean = pow(P[0].Mass / (All.Omega0 * 3 * All.Hubble * All.Hubble / (8 * M_PI * All.G)), 1.0 / 3);
-
-  if(globmax > dmean)
-    fac = dmean / globmax;
-  else
-    fac = 1.0;
-
-  if(ThisTask == 0)
-    {
-      printf("\nglass-making:  dmean= %g  global disp-maximum= %g  rms= %g\n\n",
-	     dmean, globmax, sqrt(globdisp2sum / All.TotNumPart));
-      fflush(stdout);
-    }
-
-  for(i = 0, dispmax = 0; i < NumPart; i++)
-    {
-      for(j = 0; j < 3; j++)
-	{
-	  P[i].Vel[j] = 0;
-	  P[i].Pos[j] += fac * P[i].GravAccel[j] * 2.0 / (3 * All.Hubble * All.Hubble);
-	  P[i].GravAccel[j] = 0;
-	}
-    }
-#endif
-
-
-
-
-  /* Now assign new timesteps and kick */
-
-#ifdef FLEXSTEPS
-  if((All.Ti_Current % (4 * All.PresentMinStep)) == 0)
-    if(All.PresentMinStep < TIMEBASE)
-      All.PresentMinStep *= 2;
+  ti_step = dt_displacement / All.Timebase_interval;
 
   for(i = 0; i < NumPart; i++)
     {
       if(P[i].Ti_endstep == All.Ti_Current)
 	{
-	  ti_step = get_timestep(i, &aphys, 0);
-
-	  /* make it a power 2 subdivision */
-	  ti_min = TIMEBASE;
-	  while(ti_min > ti_step)
-	    ti_min >>= 1;
-	  ti_step = ti_min;
-
-	  if(ti_step < All.PresentMinStep)
-	    All.PresentMinStep = ti_step;
-	}
-    }
-
-  ti_step = All.PresentMinStep;
-  MPI_Allreduce(&ti_step, &All.PresentMinStep, 1, MPI_INT, MPI_MIN, MPI_COMM_WORLD);
-
-  if(dt_displacement < All.MaxSizeTimestep)
-    ti_step = (int) (dt_displacement / All.Timebase_interval);
-  else
-    ti_step = (int) (All.MaxSizeTimestep / All.Timebase_interval);
-
-  /* make it a power 2 subdivision */
-  ti_min = TIMEBASE;
-  while(ti_min > ti_step)
-    ti_min >>= 1;
-  All.PresentMaxStep = ti_min;
-
-
-  if(ThisTask == 0)
-    printf("Syn Range = %g  PresentMinStep = %d  PresentMaxStep = %d \n",
-	   (double) All.PresentMaxStep / All.PresentMinStep, All.PresentMinStep, All.PresentMaxStep);
-
-#endif
-
-
-  for(i = 0; i < NumPart; i++)
-    {
-      if(P[i].Ti_endstep == All.Ti_Current)
-	{
-	  ti_step = get_timestep(i, &aphys, 0);
-
+	  
 	  /* make it a power 2 subdivision */
 	  ti_min = TIMEBASE;
 	  while(ti_min > ti_step)
