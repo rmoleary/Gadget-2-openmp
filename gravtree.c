@@ -238,16 +238,18 @@ void gravity_tree(void)
 	    //	    for(j = 0; j < NTask; j++)
 	    // Exportflag[j] = 0; //need to make exportflag local
 #ifndef PMGRID
-	    costtotal += force_treeevaluate(i, 0, &ewaldcount, &lExportflag);
+	    costtotal += force_treeevaluate(i, 0, &ewaldcount, lExportflag);
 #else
 	    costtotal += force_treeevaluate_shortrange(i, 0);
 #endif
 	  }
       }
 
+    
       for(i = oldI; i< NumPart; i++){
 	if(P[i].Ti_endstep==All.Ti_Current){
-	  for(j = 0; j < NTask; j++)
+	  
+	    for(j = 0; j < NTask; j++)
 	      {
 		if(lExportflag[i*NTask+j]>0)
 		  {
@@ -269,7 +271,7 @@ void gravity_tree(void)
 		    nsend_local[j]++;
 		  }
 	      }
-	}
+	  }
       }
       tend = second();
       timetree += timediff(tstart, tend);
@@ -338,7 +340,7 @@ void gravity_tree(void)
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    {
 #ifndef PMGRID
-	      costtotal += force_treeevaluate(j, 1, &ewaldcount, &lExportflag);
+	      costtotal += force_treeevaluate(j, 1, &ewaldcount, lExportflag);
 #else
 	      costtotal += force_treeevaluate_shortrange(j, 1);
 #endif
