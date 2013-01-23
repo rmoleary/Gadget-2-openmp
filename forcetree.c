@@ -1123,7 +1123,7 @@ void force_update_node_hmax_toptree(void)
  *  the value of TypeOfOpeningCriterion, either the geometrical BH
  *  cell-opening criterion, or the `relative' opening criterion is used.
  */
-int force_treeevaluate(int target, int mode, double *ewaldcountsum)
+int force_treeevaluate(int target, int mode, double *ewaldcountsum, int *lExportflag)
 {
   struct NODE *nop = 0;
   int no, ninteractions, ptype;
@@ -1204,7 +1204,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  lExportflag[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 	      no = Nextnode[no - MaxNodes];
 	      continue;
@@ -1395,7 +1395,7 @@ int force_treeevaluate(int target, int mode, double *ewaldcountsum)
     }
 
 #ifdef PERIODIC
-  *ewaldcountsum += force_treeevaluate_ewald_correction(target, mode, pos_x, pos_y, pos_z, aold);
+  *ewaldcountsum += force_treeevaluate_ewald_correction(target, mode, pos_x, pos_y, pos_z, aold,&lExportflag);
 #endif
 
   return ninteractions;
@@ -1540,7 +1540,7 @@ int force_treeevaluate_shortrange(int target, int mode)
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  lExportflag[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 	      no = Nextnode[no - MaxNodes];
 	      continue;
@@ -1773,7 +1773,7 @@ int force_treeevaluate_shortrange(int target, int mode)
  *  walk would be further refined.
  */
 int force_treeevaluate_ewald_correction(int target, int mode, double pos_x, double pos_y, double pos_z,
-					double aold)
+					double aold, int* lExportflag)
 {
   struct NODE *nop = 0;
   int no, cost;
@@ -1813,7 +1813,7 @@ int force_treeevaluate_ewald_correction(int target, int mode, double pos_x, doub
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  lExportflag[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 
 	      no = Nextnode[no - MaxNodes];
