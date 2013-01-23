@@ -103,8 +103,8 @@ SYSTYPE="MPA"
 #--------------------------------------- Adjust settings for target computer
 
 ifeq ($(SYSTYPE),"MPA")
-CC       =  mpicc -std=gnu99 #-prof-use  # -profile-functions -profile-loops=all -profile-loops-report=2  -std=gnu99   #-std=c99
-OPTIMIZE =  -O3  -Wall  -fast -vec-report #-no-prec-div -ipo -xhost -funroll-loops -align -ipp -opt-report 2 #-fast --fast-math# -fast
+CC       =  mpicc -std=gnu99 -openmp #-prof-use  # -profile-functions -profile-loops=all -profile-loops-report=2  -std=gnu99   #-std=c99
+OPTIMIZE =  -O3  -Wall  -xHost -vec-report #-no-prec-div -ipo -xhost -funroll-loops -align -ipp -opt-report 2 #-fast --fast-math# -fast
 GSL_INCL = # -I/usr/common/pdsoft/include
 GSL_LIBS = # -L/usr/common/pdsoft/lib  -Wl,"-R /usr/common/pdsoft/lib"
 FFTW_INCL= -I/usr/local/include

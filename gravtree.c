@@ -3,7 +3,9 @@
 #include <math.h>
 #include <float.h>
 #include <mpi.h>
-
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 #include "allvars.h"
 #include "proto.h"
 
@@ -212,7 +214,8 @@ void gravity_tree(void)
 
   i = 0;			/* beginn with this index */
   ntotleft = ntot;		/* particles left for all tasks together */
-
+  // omp_set_dynamic(0); 
+  //  omp_set_num_threads(4);
   while(ntotleft > 0)
     {
       iter++;
@@ -226,11 +229,19 @@ void gravity_tree(void)
       nexport = 0;
       int oldI = i;
       int lExportflag[NumPart*NTask+NTask];
+      //    int tid;
       //put in parallel here
-#pragma omp parallel for default(shared) reduction(+:ndone,costtotal)
+#ifdef _OPENMP
+#pragma omp parallel for reduction(+:ndone,costtotal) private(i)
+#endif
       for( i=i;  i < NumPart ; i++){
 	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
-
+#ifdef _OPENMP
+	if(i==100){
+	  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	} 
+#endif
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
@@ -336,7 +347,9 @@ void gravity_tree(void)
 
 	
 	  tstart = second();
-#pragma omp parallel for default(shared) reduction(+:costtotal)
+#ifdef _OPENMP
+#pragma omp parallel for reduction(+:costtotal) private(j)
+#endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    {
 #ifndef PMGRID
