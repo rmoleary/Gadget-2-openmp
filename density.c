@@ -307,9 +307,9 @@ void density(void)
       tstart = second();
       npleft = 0;
       int npright = 0;
-      //#ifdef _OPENMP
-      //#pragma omp parallel for reduction(+:npleft,npright) private(i,dt_entr)
-      //#endif
+#ifdef _OPENMP
+#pragma omp parallel for reduction(+:npleft,npright) private(i,dt_entr)
+#endif
     
       for(i = 0; i < N_gas; i++)
 	{
