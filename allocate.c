@@ -113,11 +113,18 @@ void allocate_memory(void)
 	  endrun(1);
 	}
       bytes_tot += bytes;
+      if(!(Exportflag2 = malloc(bytes = NTask*All.MaxPart*sizeof(char))))
+	{
+	  printf("failed to allocate memory for 'Exportflag2'\n");
+	  endrun(1);
+	}
 
-      if(ThisTask == 0)
+      if(ThisTask == 0){
 	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
+ 	printf("\nAllocated %g MByte for exportflag storage. %d\n\n", bytes / (1024.0 * 1024.0), sizeof(char));
+      }
     }
-
+  
   if(All.MaxPartSph > 0)
     {
       bytes_tot = 0;

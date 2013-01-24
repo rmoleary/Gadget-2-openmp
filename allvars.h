@@ -146,6 +146,7 @@ extern int RestartFlag;         /*!< taken from command line used to start code.
                                      marks a restart from a snapshot file. */
 
 extern char *Exportflag;        /*!< Buffer used for flagging whether a particle needs to be exported to another process */
+extern char *Exportflag2;        /*!< Buffer used for flagging whether a particle needs to be exported to another process */
 
 extern int  *Ngblist;           /*!< Buffer to hold indices of neighbours retrieved by the neighbour search routines */
 

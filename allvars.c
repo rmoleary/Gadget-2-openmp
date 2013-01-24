@@ -28,6 +28,7 @@ int RestartFlag;         /*!< taken from command line used to start code. 0 is n
                                      marks a restart from a snapshot file. */
 
 char *Exportflag;        /*!< Buffer used for flagging whether a particle needs to be exported to another process */
+char *Exportflag2;
 
 int  *Ngblist;           /*!< Buffer to hold indices of neighbours retrieved by the neighbour search routines */
 

@@ -191,7 +191,7 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
  *  returned, i.e. the reduction to a sphere still needs to be done in the
  *  calling routine.
  */
-int ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
+int ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hsml, int *startnode, int target)
 {
   int k, numngb;
   int no, p;
@@ -266,7 +266,7 @@ int ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
 	{
 	  if(no >= All.MaxPart + MaxNodes)	/* pseudo particle */
 	    {
-	      Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+	      Exportflag2[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 	      no = Nextnode[no - MaxNodes];
 	      continue;
 	    }
