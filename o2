@@ -1,0 +1,150 @@
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+allocate.c(118): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
+  	                                                                                           ^
+
+allocate.c(127): warning #181: argument is incompatible with corresponding format string conversion
+  	  printf("failed to allocate memory for `SphP' (%g MB) %d.\n", bytes / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                          ^
+
+allocate.c(133): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("Allocated %g MByte for storage of SPH data. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                            ^
+
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+forcetree.c(2668): warning #181: argument is incompatible with corresponding format string conversion
+  	       sizeof(struct NODE) + sizeof(struct extNODE));
+  	       ^
+
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+icc: remark #10346: optimization reporting is disabled given current set of compilation options
+ipo: remark #11000: performing multi-file optimizations
+ipo-1: remark #11006: generating object file /tmp/ipo_icchDcahU1.o
+ipo-2: remark #11006: generating object file /tmp/ipo_icchDcahU2.o
+ipo-3: remark #11006: generating object file /tmp/ipo_icchDcahU3.o
+ipo-4: remark #11006: generating object file /tmp/ipo_icchDcahU4.o
+io.c(73): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PERMUTED LOOP WAS VECTORIZED.
+begrun.c(124): (col. 2) remark: LOOP WAS VECTORIZED.
+io.c(697): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(703): (col. 4) remark: LOOP WAS VECTORIZED.
+io.c(720): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(823): (col. 12) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(823): (col. 12) remark: LOOP WAS VECTORIZED.
+domain.c(162): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PERMUTED LOOP WAS VECTORIZED.
+domain.c(204): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(204): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(204): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(209): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(209): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(248): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+forcetree.c(894): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(40): (col. 5) remark: LOOP WAS VECTORIZED.
+potential.c(67): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(82): (col. 7) remark: LOOP WAS VECTORIZED.
+potential.c(90): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(138): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(185): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(233): (col. 7) remark: LOOP WAS VECTORIZED.
+potential.c(246): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(246): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(260): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(311): (col. 7) remark: OUTER LOOP WAS VECTORIZED.
+potential.c(325): (col. 4) remark: OUTER LOOP WAS VECTORIZED.
+run.c(161): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(196): (col. 3) remark: LOOP WAS VECTORIZED.
+accel.c(74): (col. 7) remark: LOOP WAS VECTORIZED.
+predict.c(81): (col. 7) remark: OUTER LOOP WAS VECTORIZED.
+domain.c(937): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(947): (col. 3) remark: LOOP WAS VECTORIZED.
+timestep.c(81): (col. 5) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(81): (col. 5) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(81): (col. 5) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(81): (col. 5) remark: PERMUTED LOOP WAS VECTORIZED.
+restart.c(171): (col. 8) remark: LOOP WAS VECTORIZED.
+timestep.c(301): (col. 8) remark: PARTIAL LOOP WAS V.
+.
+restart.c(215): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(224): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(253): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(337): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(345): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(375): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(411): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(422): (col. 4) remark: LOOP WAS VECTORIZED.
+forcetree.c(109): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(208): (col. 8) remark: BLOCK WAS VECTORIZED.
+domain.c(452): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(315): (col. 8) remark: LOOP WAS VECTORIZED.
+forcetree.c(439): (col. 7) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(415): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(165): (col. 5) remark: LOOP WAS VECTORIZED.
+gravtree.c(190): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(220): (col. 7) remark: LOOP WAS VECTORIZED.
+gravtree.c(230): (col. 6) remark: LOOP WAS VECTORIZED.
+gravtree.c(283): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(341): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(393): (col. 7) remark: LOOP WAS VECTORIZED.
+gravtree.c(437): (col. 2) remark: LOOP WAS VECTORIZED.
+gravtree.c(523): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(523): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(523): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(523): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+read_ic.c(134): (col. 4) remark: LOOP WAS VECTORIZED.
+read_ic.c(145): (col. 3) remark: LOOP WAS VECTORIZED.
+read_ic.c(178): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(206): (col. 5) remark: LOOP WAS VECTORIZED.
+read_ic.c(407): (col. 2) remark: LOOP WAS VECTORIZED.
+read_ic.c(492): (col. 12) remark: PARTIAL LOOP WAS VECTORIZED.
+read_ic.c(492): (col. 12) remark: LOOP WAS VECTORIZED.
+read_ic.c(626): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(626): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(626): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(626): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(626): (col. 7) remark: LOOP WAS VECTORIZED.
+hydra.c(109): (col. 3) remark: LOOP WAS VECTORIZED.
+hydra.c(126): (col. 7) remark: LOOP WAS VECTORIZED.
+hydra.c(136): (col. 6) remark: LOOP WAS VECTORIZED.
+hydra.c(192): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(245): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(302): (col. 7) remark: LOOP WAS VECTORIZED.
+init.c(60): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(72): (col. 7) remark: LOOP WAS VECTORIZED.
+init.c(78): (col. 7) remark: OUTER LOOP WAS VECTORIZED.
+init.c(131): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(152): (col. 5) remark: LOOP WAS VECTORIZED.
+hydra.c(410): (col. 16) remark: LOOP WAS VECTORIZED.
+density.c(91): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+density.c(101): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(117): (col. 4) remark: LOOP WAS VECTORIZED.
+density.c(127): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(171): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(224): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(283): (col. 4) remark: LOOP WAS VECTORIZED.
+density.c(398): (col. 7) remark: LOOP WAS VECTORIZED.
+density.c(430): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(507): (col. 22) remark: LOOP WAS VECTORIZED.
