@@ -15,6 +15,14 @@
 
 #ifndef ALLVARS_H
 #define ALLVARS_H
+#ifdef _OPENMP
+#ifndef MAXTHREADS
+#define MAXTHREADS 16
+#endif
+#else
+#define MAXTHREADS 1
+#endif
+
 
 #include <stdio.h>
 #include <gsl/gsl_rng.h>

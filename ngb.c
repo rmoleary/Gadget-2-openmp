@@ -202,6 +202,10 @@ int ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hsml, int *startnode, int
   double xtmp;
 #endif
 
+  int tid = 0;
+#ifdef _OPENMP
+  tid = omp_get_thread_num();
+#endif
   for(k = 0; k < 3; k++)	/* cube-box window */
     {
       searchmin[k] = searchcenter[k] - hsml;
@@ -248,8 +252,11 @@ int ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hsml, int *startnode, int
 	  if(P[p].Pos[2] > searchmax[2])
 	    continue;
 #endif
+#ifdef _OPENMP
+	  Ngblist[MAX_NGB*tid+numngb++] = p;
+#else
 	  Ngblist[numngb++] = p;
-
+#endif
 	  if(numngb == MAX_NGB)
 	    {
 	      numngb = ngb_clear_buf(searchcenter, hsml, numngb);
@@ -321,14 +328,18 @@ int ngb_clear_buf(FLOAT searchcenter[3], FLOAT hsml, int numngb)
 {
   int i, p;
   FLOAT dx, dy, dz, r2;
-
+  
 #ifdef PERIODIC
   double xtmp;
 #endif
 
+  int tid = 0;
+#ifdef _OPENMP
+  tid = omp_get_thread_num();
+#endif
   for(i = 0; i < numngb; i++)
     {
-      p = Ngblist[i];
+      p = Ngblist[tid*MAX_NGB+i];
 #ifdef PERIODIC
       dx = NGB_PERIODIC_X(P[p].Pos[0] - searchcenter[0]);
       dy = NGB_PERIODIC_Y(P[p].Pos[1] - searchcenter[1]);
@@ -342,7 +353,7 @@ int ngb_clear_buf(FLOAT searchcenter[3], FLOAT hsml, int numngb)
 
       if(r2 > hsml * hsml)
 	{
-	  Ngblist[i] = Ngblist[numngb - 1];
+	  Ngblist[tid*MAX_NGB+i] = Ngblist[tid*MAX_NGB+numngb - 1];
 	  i--;
 	  numngb--;
 	}
@@ -377,7 +388,8 @@ void ngb_treeallocate(int npart)
 #endif
 #endif
 
-  if(!(Ngblist = malloc(bytes = npart * (long) sizeof(int))))
+
+  if(!(Ngblist = malloc(bytes = MAXTHREADS * npart * (long) sizeof(int)))) //npart = MAXN
     {
       printf("Failed to allocate %g MB for ngblist array\n", bytes / (1024.0 * 1024.0));
       endrun(78);

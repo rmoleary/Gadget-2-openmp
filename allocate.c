@@ -121,7 +121,7 @@ void allocate_memory(void)
 
       if(ThisTask == 0){
 	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
- 	printf("\nAllocated %g MByte for exportflag storage. %d\n\n", bytes / (1024.0 * 1024.0), sizeof(char));
+ 	printf("\nAllocated %g MByte for exportflag storage. %d %d %d\n\n", bytes / (1024.0 * 1024.0),NTask,All.MaxPart, sizeof(char));
       }
     }
   

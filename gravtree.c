@@ -234,7 +234,7 @@ void gravity_tree(void)
 #ifdef _OPENMP
 #pragma omp parallel for reduction(+:ndone,costtotal) private(i) //schedule(dynamic,16)
 #endif
-      for( i=i;  i < NumPart ; i++){
+      for( i=oldI;  i < NumPart ; i++){
 	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
 #ifdef _OPENMP
 	if(i==100){

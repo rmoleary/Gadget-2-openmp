@@ -126,14 +126,16 @@ void density(void)
 #pragma omp parallel private(i) reduction(+:ndone)
 #endif	  
 	  //	  for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeDensity - NTask; i++)
-	  for(i=i; i <N_gas ; i++){
+	  for(i=oldI; i <N_gas ; i++){
 	    if(P[i].Ti_endstep == All.Ti_Current)
 	      {
 		ndone++;
 
-		for(j = 0; j < NTask; j++)
+		for(j = 0; j < NTask; j++){
+		  //		  printf("#ef  %d %d %d \n",i,NTask,j);
 		  Exportflag2[i*NTask+j] = 0;
 
+		}
 		density_evaluate(i, 0);
 	      }
 	  }
@@ -375,8 +377,10 @@ void density(void)
 		    SphP[i].Hsml = pow(0.5 * (pow(SphP[i].Left, 3) + pow(SphP[i].Right, 3)), 1.0 / 3);
 		  else
 		    {
-		      if(SphP[i].Right == 0 && SphP[i].Left == 0)
+		      if(SphP[i].Right == 0 && SphP[i].Left == 0){
+			printf(" %d %g %g %d \n", i, SphP[i].Right, SphP[i].Left, ThisTask);
 			endrun(8188);	/* can't occur */
+}
 
 		      if(SphP[i].Right == 0 && SphP[i].Left > 0)
 			{
@@ -496,6 +500,10 @@ void density_evaluate(int target, int mode)
   double weighted_numngb, dhsmlrho;
   FLOAT *pos, *vel;
 
+  int tid = 0;
+#ifdef _OPENMP
+  tid =  omp_get_thread_num();
+#endif
   if(mode == 0)
     {
       pos = P[target].Pos;
@@ -530,7 +538,7 @@ void density_evaluate(int target, int mode)
 
       for(n = 0; n < numngb_inbox; n++)
 	{
-	  j = Ngblist[n];
+	  j = Ngblist[tid*MAX_NGB+n];
 
 	  dx = pos[0] - P[j].Pos[0];
 	  dy = pos[1] - P[j].Pos[1];
