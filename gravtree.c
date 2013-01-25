@@ -232,8 +232,9 @@ void gravity_tree(void)
       //    int tid;
       //put in parallel here
 #ifdef _OPENMP
-
-#pragma omp parallel for reduction(+:ndone,costtotal) //schedule(dynamic,16)
+      double tnthreads = .25/omp_get_num_threads();
+      int csize = ceil((NumPart-oldI)*tnthreads);
+#pragma omp parallel for reduction(+:ndone,costtotal) schedule(dynamic,csize)
 #endif
       for( i=oldI;  i < NumPart ; i++){
 	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
@@ -349,7 +350,8 @@ void gravity_tree(void)
 	
 	  tstart = second();
 #ifdef _OPENMP
-#pragma omp parallel for reduction(+:costtotal) 
+	  csize = ceil(nbuffer[ThisTask]*tnthreads);
+#pragma omp parallel for reduction(+:costtotal)  schedule(dynamic,csize)
 #endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    {

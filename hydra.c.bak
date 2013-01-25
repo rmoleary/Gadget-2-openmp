@@ -233,7 +233,7 @@ void hydro_force(void)
 	    hydro_evaluate(j, 1);
 	  tend = second();
 	  timecomp += timediff(tstart, tend);
-
+	
 	  /* do a block to measure imbalance */
 	  tstart = second();
 	  MPI_Barrier(MPI_COMM_WORLD);
