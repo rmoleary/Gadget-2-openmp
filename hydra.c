@@ -18,6 +18,8 @@
 
 static double hubble_a, atime, hubble_a2, fac_mu, fac_vsic_fix, a3inv, fac_egy;
 
+#define CHECKOMP // printf("check %d %d\n",ThisTask,__LINE__);	//  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+
 #ifdef PERIODIC
 static double boxSize, boxHalf;
 
@@ -131,19 +133,23 @@ void hydro_force(void)
       int oldI = i;
       nexport = 0;
       ndone = 0;
-      
+      //      printf("star hydra %d %d %d   %d \n", i, ntotleft, ThisTask,N_gas);
+      CHECKOMP
       //     for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTask; i++)
 #ifdef _OPENMP
-#pragma omp parallel for private(i) reduction(+:ndone)
+#pragma omp parallel for  reduction(+:ndone)
 #endif	  
       for(i=oldI; i<N_gas; i++){
 #ifdef _OPENMP
-	if(i==100){
-	  printf("#hyopcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
-	  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
-	} 
+	//	if(i==100){
+	//	  printf("#hyopcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	//	  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	  fflush(stdout);
+	  //	}
+	
 #endif
-	  
+	  //	  printf("check go %d %d\n",i,ThisTask);
+	  fflush(stdout);
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
@@ -154,6 +160,7 @@ void hydro_force(void)
 	    hydro_evaluate(i, 0);
 	  }
       }
+      CHECKOMP
       for(i=oldI; i<N_gas; i++){
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
@@ -187,14 +194,17 @@ void hydro_force(void)
 	      }
 	  }
       }
+      oldI = N_gas;
       tend = second();
       timecomp += timediff(tstart, tend);
 
-      qsort(HydroDataIn, nexport, sizeof(struct hydrodata_in), hydro_compare_key);
+ CHECKOMP
 
+      qsort(HydroDataIn, nexport, sizeof(struct hydrodata_in), hydro_compare_key);
+ CHECKOMP
       for(j = 1, noffset[0] = 0; j < NTask; j++)
 	noffset[j] = noffset[j - 1] + nsend_local[j - 1];
-
+ CHECKOMP
       tstart = second();
 
       MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_WORLD);
@@ -203,7 +213,7 @@ void hydro_force(void)
       timeimbalance += timediff(tstart, tend);
 
 
-
+ CHECKOMP
       /* now do the particles that need to be exported */
 
       for(level = 1; level < (1 << PTask); level++)
@@ -246,17 +256,19 @@ void hydro_force(void)
 	    }
 	  tend = second();
 	  timecommsumm += timediff(tstart, tend);
-
+	  CHECKOMP 
 	  /* now do the imported particles */
 	  tstart = second();
 #ifdef _OPENMP
-#pragma omp parallel for private(j)
+#pragma omp parallel for
 #endif
+	  //	  printf("nbuf %d\n",nbuffer[ThisTask]);
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    hydro_evaluate(j, 1);
 	  tend = second();
 	  timecomp += timediff(tstart, tend);
 
+CHECKOMP	
 	  /* do a block to measure imbalance */
 	  tstart = second();
 	  MPI_Barrier(MPI_COMM_WORLD);
@@ -276,6 +288,7 @@ void hydro_force(void)
 		    if(maxfill < nbuffer[j] + nsend[(j ^ ngrp) * NTask + j])
 		      maxfill = nbuffer[j] + nsend[(j ^ ngrp) * NTask + j];
 		}
+	      CHECKOMP
 	      if(maxfill >= All.BunchSizeHydro)
 		break;
 
@@ -310,7 +323,7 @@ void hydro_force(void)
 			}
 		    }
 		}
-
+	      CHECKOMP
 	      for(j = 0; j < NTask; j++)
 		if((j ^ ngrp) < NTask)
 		  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
@@ -320,12 +333,12 @@ void hydro_force(void)
 
 	  level = ngrp - 1;
 	}
-
+      CHECKOMP
       MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, MPI_COMM_WORLD);
       for(j = 0; j < NTask; j++)
 	ntotleft -= ndonelist[j];
     }
-
+  CHECKOMP
   free(ndonelist);
   free(nsend);
   free(nsend_local);
@@ -384,13 +397,18 @@ void hydro_evaluate(int target, int mode)
   double p_over_rho2_i, p_over_rho2_j, soundspeed_i, soundspeed_j;
   double hfc, dwk_i, vdotr, vdotr2, visc, mu_ij, rho_ij, vsig;
   double h_j, dwk_j, r, r2, u, hfc_visc;
-
+  int ptarget = 0;
 #ifndef NOVISCOSITYLIMITER
   double dt;
 #endif
-
+  int tid = 0;
+#ifdef _OPENMP
+  tid =  omp_get_thread_num();
+#endif
+  //  printf("fkf %d %d %d \n",target,mode,ThisTask);
   if(mode == 0)
     {
+      ptarget = target;
       pos = P[target].Pos;
       vel = SphP[target].VelPred;
       h_i = SphP[target].Hsml;
@@ -430,12 +448,12 @@ void hydro_evaluate(int target, int mode)
   startnode = All.MaxPart;
   do
     {
-      numngb = ngb_treefind_pairs(&pos[0], h_i, &startnode,target);
-
+      numngb = ngb_treefind_pairs(&pos[0], h_i, &startnode,ptarget);
+      //      printf("ngb s %d %d %d jj %d %d  %d\n",target, mode, ThisTask,Ngblist[tid*MAX_NGB+numngb-2],Ngblist[0],numngb);
       for(n = 0; n < numngb; n++)
 	{
-	  j = Ngblist[n];
-
+	  j = Ngblist[tid*MAX_NGB+n];
+	  
 	  dx = pos[0] - P[j].Pos[0];
 	  dy = pos[1] - P[j].Pos[1];
 	  dz = pos[2] - P[j].Pos[2];

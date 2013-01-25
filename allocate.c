@@ -113,7 +113,7 @@ void allocate_memory(void)
 	  endrun(1);
 	}
       bytes_tot += bytes;
-      if(!(Exportflag2 = malloc(bytes = NTask*All.MaxPart*sizeof(char))))
+      if(!(Exportflag2 = malloc(bytes = (NTask+2)*All.MaxPart*sizeof(char))))
 	{
 	  printf("failed to allocate memory for 'Exportflag2'\n");
 	  endrun(1);

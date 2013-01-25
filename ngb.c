@@ -126,8 +126,8 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode,int tar
 	  if(P[p].Pos[2] > (searchmax[2] + hdiff))
 	    continue;
 #endif
-	  Ngblist[tid*MAX_NGB+numngb++] = p;
-
+	  Ngblist[tid*MAX_NGB+numngb] = p;
+	  numngb++;
 	  if(numngb == MAX_NGB)
 	    {
 	      printf
@@ -401,7 +401,7 @@ void ngb_treeallocate(int npart)
   totbytes += bytes;
 
   if(ThisTask == 0)
-    printf("allocated %g Mbyte for ngb search.\n", totbytes / (1024.0 * 1024.0));
+    printf("allocated %g Mbyte for ngb search. %d \n", totbytes / (1024.0 * 1024.0),MAXTHREADS);
 }
 
 
