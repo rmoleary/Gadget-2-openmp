@@ -228,11 +228,11 @@ void gravity_tree(void)
       ndone = 0;
       nexport = 0;
       int oldI = i;
-      int lExportflag[NumPart*NTask+NTask];
+      //      int lExportflag[NumPart*NTask+NTask];
       //    int tid;
       //put in parallel here
 #ifdef _OPENMP
-#pragma omp parallel for reduction(+:ndone,costtotal) private(i) //schedule(dynamic,16)
+#pragma omp parallel for reduction(+:ndone,costtotal) //schedule(dynamic,16)
 #endif
       for( i=oldI;  i < NumPart ; i++){
 	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
@@ -246,10 +246,10 @@ void gravity_tree(void)
 	  {
 	    ndone++;
 
-	    //	    for(j = 0; j < NTask; j++)
-	    // Exportflag[j] = 0; //need to make exportflag local
+	    for(j = 0; j < NTask; j++)
+	      Exportflag2[i*NTask+j] = 0; //need to make exportflag local
 #ifndef PMGRID
-	    costtotal += force_treeevaluate(i, 0, &ewaldcount, lExportflag);
+	    costtotal += force_treeevaluate(i, 0, &ewaldcount);
 #else
 	    costtotal += force_treeevaluate_shortrange(i, 0);
 #endif
@@ -262,7 +262,7 @@ void gravity_tree(void)
 	  
 	    for(j = 0; j < NTask; j++)
 	      {
-		if(lExportflag[i*NTask+j]>0)
+		if(Exportflag2[i*NTask+j])
 		  {
 		    for(k = 0; k < 3; k++)
 		      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
@@ -303,7 +303,7 @@ void gravity_tree(void)
       timeimbalance += timediff(tstart, tend);
 
       /* now do the particles that need to be exported */
-
+    
       for(level = 1; level < (1 << PTask); level++)
 	{
 	  tstart = second();
@@ -348,12 +348,12 @@ void gravity_tree(void)
 	
 	  tstart = second();
 #ifdef _OPENMP
-#pragma omp parallel for reduction(+:costtotal) private(j)
+#pragma omp parallel for reduction(+:costtotal) 
 #endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    {
 #ifndef PMGRID
-	      costtotal += force_treeevaluate(j, 1, &ewaldcount, lExportflag);
+	      costtotal += force_treeevaluate(j, 1, &ewaldcount);
 #else
 	      costtotal += force_treeevaluate_shortrange(j, 1);
 #endif
@@ -365,7 +365,7 @@ void gravity_tree(void)
 	  MPI_Barrier(MPI_COMM_WORLD);
 	  tend = second();
 	  timeimbalance += timediff(tstart, tend);
-
+	
 	  /* get the result */
 	  tstart = second();
 	  for(j = 0; j < NTask; j++)
