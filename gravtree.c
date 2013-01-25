@@ -464,6 +464,12 @@ void gravity_tree(void)
 	//P[i].GravAccel[1]+=force_add_ryan(i,1);
 	//P[i].GravAccel[2]+=force_add_ryan(i,2);
 	//	force_add_ryan(i);
+#ifdef RELAX
+        P[i].GravAccel[0] -= P[i].Vel[0];
+        P[i].GravAccel[1] -= P[i].Vel[1];
+        P[i].GravAccel[2] -= P[i].Vel[2];
+#endif
+
 
 	ax = P[i].GravAccel[0];//+force_add_ryan(i,0);
 	ay = P[i].GravAccel[1];//+force_add_ryan(i,1);
