@@ -232,8 +232,9 @@ void gravity_tree(void)
       //    int tid;
       //put in parallel here
 #ifdef _OPENMP
-      double tnthreads = .25/omp_get_num_threads();
+      double tnthreads = .5*.25/omp_get_max_threads();
       int csize = ceil((NumPart-oldI)*tnthreads);
+      printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
 #pragma omp parallel for reduction(+:ndone,costtotal) schedule(dynamic,csize)
 #endif
       for( i=oldI;  i < NumPart ; i++){
