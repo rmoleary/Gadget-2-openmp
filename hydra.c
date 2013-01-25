@@ -137,7 +137,7 @@ void hydro_force(void)
       CHECKOMP
       //     for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTask; i++)
 #ifdef _OPENMP
-#pragma omp parallel for  reduction(+:ndone)
+#pragma omp parallel for  reduction(+:ndone) schedule(guided,8)
 #endif	  
       for(i=oldI; i<N_gas; i++){
 #ifdef _OPENMP
@@ -260,7 +260,7 @@ void hydro_force(void)
 	  /* now do the imported particles */
 	  tstart = second();
 #ifdef _OPENMP
-#pragma omp parallel for
+#pragma omp parallel for schedule(guided,8)
 #endif
 	  //	  printf("nbuf %d\n",nbuffer[ThisTask]);
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
