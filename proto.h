@@ -137,7 +137,7 @@ size_t my_fwrite(void *ptr, size_t size, size_t nmemb, FILE * stream);
 int    ngb_clear_buf(FLOAT searchcenter[3], FLOAT hguess, int numngb);
 void   ngb_treeallocate(int npart);
 void   ngb_treebuild(void);
-int    ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode);
+int    ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode, int target);
 int    ngb_treefind_variable(FLOAT searchcenter[3], FLOAT hguess, int *startnode, int target);
 void   ngb_treefree(void);
 void   ngb_treesearch(int);

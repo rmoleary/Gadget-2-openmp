@@ -123,7 +123,7 @@ void density(void)
 	  ndone = 0;
 	  int oldI = i;
 #ifdef _OPENMP
-#pragma omp parallel private(i) reduction(+:ndone)
+#pragma omp parallel for private(i) reduction(+:ndone)
 #endif	  
 	  //	  for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeDensity - NTask; i++)
 	  for(i=oldI; i <N_gas ; i++){
@@ -310,7 +310,6 @@ void density(void)
 #ifdef _OPENMP
 #pragma omp parallel for reduction(+:npleft,npright) private(i,dt_entr)
 #endif
-    
       for(i = 0; i < N_gas; i++)
 	{
 	  if(P[i].Ti_endstep == All.Ti_Current)

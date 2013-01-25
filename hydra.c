@@ -128,19 +128,38 @@ void hydro_force(void)
 
       /* do local particles and prepare export list */
       tstart = second();
-      for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTask; i++)
+      int oldI = i;
+      nexport = 0;
+      ndone = 0;
+      
+      //     for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeHydro - NTask; i++)
+#ifdef _OPENMP
+#pragma omp parallel for private(i) reduction(+:ndone)
+#endif	  
+      for(i=oldI; i<N_gas; i++){
+#ifdef _OPENMP
+	if(i==100){
+	  printf("#hyopcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	} 
+#endif
+	  
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
 
 	    for(j = 0; j < NTask; j++)
-	      Exportflag[j] = 0;
+	      Exportflag2[i*NTask+j] = 0;
 
 	    hydro_evaluate(i, 0);
-
+	  }
+      }
+      for(i=oldI; i<N_gas; i++){
+	if(P[i].Ti_endstep == All.Ti_Current)
+	  {
 	    for(j = 0; j < NTask; j++)
 	      {
-		if(Exportflag[j])
+		if(Exportflag2[i*NTask+j])
 		  {
 		    for(k = 0; k < 3; k++)
 		      {
@@ -167,6 +186,7 @@ void hydro_force(void)
 		  }
 	      }
 	  }
+      }
       tend = second();
       timecomp += timediff(tstart, tend);
 
@@ -229,6 +249,9 @@ void hydro_force(void)
 
 	  /* now do the imported particles */
 	  tstart = second();
+#ifdef _OPENMP
+#pragma omp parallel for private(j)
+#endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    hydro_evaluate(j, 1);
 	  tend = second();
@@ -407,7 +430,7 @@ void hydro_evaluate(int target, int mode)
   startnode = All.MaxPart;
   do
     {
-      numngb = ngb_treefind_pairs(&pos[0], h_i, &startnode);
+      numngb = ngb_treefind_pairs(&pos[0], h_i, &startnode,target);
 
       for(n = 0; n < numngb; n++)
 	{

@@ -61,7 +61,7 @@ static double boxSize_Z, boxHalf_Z;
  *  difficult) second part of it. For this purpose, each node knows the
  *  maximum h occuring among the particles it represents.
  */
-int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
+int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode,int target)
 {
   int k, no, p, numngb;
   FLOAT hdiff;
@@ -72,6 +72,10 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
   double xtmp;
 #endif
 
+  int tid = 0;
+#ifdef _OPENMP
+  tid =  omp_get_thread_num();
+#endif
   for(k = 0; k < 3; k++)	/* cube-box window */
     {
       searchmin[k] = searchcenter[k] - hsml;
@@ -122,7 +126,7 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
 	  if(P[p].Pos[2] > (searchmax[2] + hdiff))
 	    continue;
 #endif
-	  Ngblist[numngb++] = p;
+	  Ngblist[tid*MAX_NGB+numngb++] = p;
 
 	  if(numngb == MAX_NGB)
 	    {
@@ -137,7 +141,7 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode)
 	{
 	  if(no >= All.MaxPart + MaxNodes)	/* pseudo particle */
 	    {
-	      Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+	      Exportflag2[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 	      no = Nextnode[no - MaxNodes];
 	      continue;
 	    }
