@@ -257,7 +257,7 @@ void gravity_tree(void)
 	  }
       }
 
-      printf("Numpart %d %d %g \n", NumPart, ThisTask, second()-tstart);    
+      printf("Numpart %d %d t%d %g \n", NumPart, ndone, ThisTask, second()-tstart);    
       for(i = oldI; i< NumPart; i++){
 	if(P[i].Ti_endstep==All.Ti_Current){
 	  
@@ -360,7 +360,7 @@ void gravity_tree(void)
 #endif
 	    }
 	  tend = second();
-	  printf("nuffer[ThisTask] %d %d  %g\n", nbuffer[ThisTask], ThisTask,tend-tstart);
+	  printf("nuffer[ThisTask] %d t%d  %g\n", nbuffer[ThisTask], ThisTask,tend-tstart);
 
 	  timetree += timediff(tstart, tend);
 
