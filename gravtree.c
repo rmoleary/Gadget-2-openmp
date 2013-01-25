@@ -232,6 +232,7 @@ void gravity_tree(void)
       //    int tid;
       //put in parallel here
 #ifdef _OPENMP
+
 #pragma omp parallel for reduction(+:ndone,costtotal) //schedule(dynamic,16)
 #endif
       for( i=oldI;  i < NumPart ; i++){
@@ -256,7 +257,7 @@ void gravity_tree(void)
 	  }
       }
 
-    
+      printf("Numpart %d %d %g \n", NumPart, ThisTask, second()-tstart);    
       for(i = oldI; i< NumPart; i++){
 	if(P[i].Ti_endstep==All.Ti_Current){
 	  
@@ -359,6 +360,8 @@ void gravity_tree(void)
 #endif
 	    }
 	  tend = second();
+	  printf("nuffer[ThisTask] %d %d  %g\n", nbuffer[ThisTask], ThisTask,tend-tstart);
+
 	  timetree += timediff(tstart, tend);
 
 	  tstart = second();
