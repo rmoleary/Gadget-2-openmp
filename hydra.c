@@ -144,12 +144,12 @@ void hydro_force(void)
 	//	if(i==100){
 	//	  printf("#hyopcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
 	//	  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
-	  fflush(stdout);
+	//	  fflush(stdout);
 	  //	}
 	
 #endif
 	  //	  printf("check go %d %d\n",i,ThisTask);
-	  fflush(stdout);
+	  //fflush(stdout);
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;

@@ -237,10 +237,10 @@ void gravity_tree(void)
       for( i=oldI;  i < NumPart ; i++){
 	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
 #ifdef _OPENMP
-	if(i==100){
-	  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
-	  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
-	} 
+	//	if(i==100){
+	//  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	//  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	//	} 
 #endif
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
