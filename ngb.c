@@ -4,7 +4,9 @@
 #include <math.h>
 #include <time.h>
 #include <mpi.h>
-
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 #include "allvars.h"
 #include "proto.h"
 
@@ -392,7 +394,12 @@ void ngb_treeallocate(int npart)
 #endif
 #endif
 
-
+#ifdef _OPENMP
+  if(MAXTHREADS < omp_get_max_threads()){
+    printf("Can't allocate memory, there will be an overrun! Change MAXTHREADS\n");
+    endrun(788888);
+  }
+#endif
   if(!(Ngblist = malloc(bytes = MAXTHREADS * npart * (long) sizeof(int)))) //npart = MAXN
     {
       printf("Failed to allocate %g MB for ngblist array\n", bytes / (1024.0 * 1024.0));

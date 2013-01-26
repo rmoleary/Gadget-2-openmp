@@ -1,0 +1,665 @@
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+ngb.c(77): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+ngb.c(211): warning #266: function "omp_get_thread_num" declared implicitly
+    tid = omp_get_thread_num();
+          ^
+
+ngb.c(342): warning #266: function "omp_get_thread_num" declared implicitly
+    tid = omp_get_thread_num();
+          ^
+
+ngb.c(79): (col. 3) remark: LOOP WAS VECTORIZED.
+ngb.c(213): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+
+
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+global.c(48): (col. 7) remark: LOOP WAS VECTORIZED.
+global.c(70): (col. 7) remark: LOOP WAS VECTORIZED.
+global.c(158): (col. 2) remark: LOOP WAS VECTORIZED.
+global.c(162): (col. 7) remark: LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+global.c(166): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+
+
+
+
+
+predict.c(51): remark #30525: (PAR) Insert a "#pragma loop count min(16)" statement right before the loop at line 51 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 16 iterations.
+predict.c(81): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 81 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+Number of advice-messages emitted for this compilation session: 8.
+END OF GAP REPORT LOG
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+
+begrun.c(897): remark #30525: (PAR) Insert a "#pragma loop count min(128)" statement right before the loop at line 897 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 128 iterations.
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(152): (col. 5) remark: LOOP WAS VECTORIZED.
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(152): (col. 5) remark: LOOP WAS VECTORIZED.
+allocate.c(123): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
+  	                                                                                           ^
+
+allocate.c(124): warning #181: argument is incompatible with corresponding format string conversion
+   	printf("\nAllocated %g MByte for exportflag storage. %d %d %d\n\n", bytes / (1024.0 * 1024.0),NTask,All.MaxPart, sizeof(char));
+   	                                                                                                                 ^
+
+allocate.c(134): warning #181: argument is incompatible with corresponding format string conversion
+  	  printf("failed to allocate memory for `SphP' (%g MB) %d.\n", bytes / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                          ^
+
+allocate.c(140): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("Allocated %g MByte for storage of SPH data. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                            ^
+
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+
+
+
+
+
+init.c(166): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 166 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+init.c(78): remark #30525: (PAR) Insert a "#pragma loop count min(8)" statement right before the loop at line 78 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 8 iterations.
+init.c(83): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 83 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+init.c(112): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 112 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+init.c(209): remark #30533: (LOOP) Compile with the -opt-subscript-in-range option to vectorize and/or parallelize the loop at line 209. [VERIFY] Make sure that no loop in the program contains or generates very large integers (typically very large integers >= 2^30).
+
+init.c(205): remark #30525: (PAR) Insert a "#pragma loop count min(16)" statement right before the loop at line 205 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 16 iterations.
+init.c(152): remark #30525: (PAR) Insert a "#pragma loop count min(16)" statement right before the loop at line 152 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 16 iterations.
+Number of advice-messages emitted for this compilation session: 13.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+density.c(505): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+responding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                             ^
+
+read_ic.c(157): warning #181: argument is incompatible with corresponding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                                           ^
+
+read_ic.c(157): warning #181: argument is incompatible with corresponding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                                                          ^
+
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PERMUTED LOOP WAS VECTORIZED.
+timestep.c(301): (col. 8) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(350): (col. 5) remark: LOOP WAS VECTORIZED.
+read_ic.c(481): warning #188: enumerated type mixed with another type
+    for(blocknr = 0; blocknr < IO_NBLOCKS; blocknr++)
+                ^
+
+io.c(570): warning #188: enumerated type mixed with another type
+    for(i = 0; i < IO_NBLOCKS; i++)
+          ^
+
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PERMUTED LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:17 2013
+
+
+
+
+timestep.c(600): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 600. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+timestep.c(600): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 600 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: v, mim, count. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+timestep.c(600): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 600 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+timestep.c(350): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 350 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: Extnodes, P. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+Number of advice-messages emitted for this compilation session: 7.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+read_ic.c(134): (col. 4) remark: LOOP WAS VECTORIZED.
+read_ic.c(178): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(206): (col. 5) remark: LOOP WAS VECTORIZED.
+read_ic.c(134): (col. 4) remark: LOOP WAS VECTORIZED.
+read_ic.c(206): (col. 5) remark: LOOP WAS VECTORIZED.
+io.c(73): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PERMUTED LOOP WAS VECTORIZED.
+read_ic.c(299): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(293): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(288): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(283): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(278): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(267): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(697): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(703): (col. 4) remark: LOOP WAS VECTORIZED.
+io.c(720): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(472): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(515): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(502): (col. 7) remark: LOOP WAS VECTORIZED.
+run.c(161): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(196): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(161): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(196): (col. 3) remark: LOOP WAS VECTORIZED.
+read_ic.c(299): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(293): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(288): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(283): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(278): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(267): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+
+
+
+
+read_ic.c(68): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "read_file" in order to parallelize the loop at line 65. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+read_ic.c(69): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "MPI_Barrier" in order to parallelize the loop at line 65. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+read_ic.c(65): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 65 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: ThisTask, buf. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+read_ic.c(65): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 65 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+read_ic.c(97): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 97 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+read_ic.c(108): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 108. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+read_ic.c(108): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 108 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+read_ic.c(134): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 134 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+read_ic.c(206): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 206 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+read_ic.c(288): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 288. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+read_ic.c(267): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 267 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+Number of advice-messages emitted for this compilation session: 15.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+
+run.c(161): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 161 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+run.c(196): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 196 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+io.c(472): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(515): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(502): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+
+
+
+
+io.c(76): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 76 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: n_type. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+io.c(76): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 76 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+io.c(110): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "write_file" in order to parallelize the loop at line 107. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+io.c(111): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "MPI_Barrier" in order to parallelize the loop at line 107. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+io.c(107): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 107 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+io.c(708): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "MPI_Send" in order to parallelize the loop at line 707. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+io.c(707): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 707 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+io.c(472): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 472 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: typelist, npart, MassTable. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+Number of advice-messages emitted for this compilation session: 12.
+END OF GAP REPORT LOG
+restart.c(212): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(215): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(224): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(253): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(262): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(212): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(215): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(224): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(253): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(262): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+
+
+restart.c(212): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 212. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+restart.c(212): remark #30532: (LOOP) Store the value of the upper-bound expression (NumPart) of the loop at line 213 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = NumPart" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+restart.c(212): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 212 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Father, NumPart, MaxPart. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+restart.c(212): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 212 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+restart.c(215): remark #30531: (LOOP) Store the value of the upper-bound expression of the loop at line 216 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = upper-bound of loop" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then, replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+restart.c(215): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 215 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Nextnode, NumPart, MaxPart, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+restart.c(215): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 215 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+restart.c(224): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 224 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+restart.c(253): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 253 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: MaxPart, Nextnode, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+restart.c(262): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 262 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: DomainNodeIndex, MaxPart, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+Number of advice-messages emitted for this compilation session: 12.
+END OF GAP REPORT LOG
+density.c(91): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+density.c(101): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(117): (col. 4) remark: PARTIAL LOOP WAS VECTORIZED.
+density.c(186): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(191): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(217): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(242): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(247): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(290): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(424): (col. 7) remark: LOOP WAS VECTORIZED.
+density.c(456): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(101): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(117): (col. 4) remark: PARTIAL LOOP WAS VECTORIZED.
+density.c(186): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(191): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(217): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(242): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(247): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(290): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(424): (col. 7) remark: LOOP WAS VECTORIZED.
+density.c(456): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:18 2013
+
+
+
+
+
+density.c(540): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 540 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+density.c(101): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 101 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(117): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 117 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+density.c(186): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 186 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+density.c(191): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 191 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(217): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 217 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(242): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 242 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+density.c(247): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 247 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(272): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 272 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: SphP, DensDataPartialResult. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+density.c(272): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 272 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+density.c(290): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 290 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(424): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 424 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+density.c(456): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 456 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+Number of advice-messages emitted for this compilation session: 17.
+END OF GAP REPORT LOG
+gravtree.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:21 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:21 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+hydra.c(406): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+gravtree.c(662): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(192): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(223): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(313): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(318): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(344): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(377): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(382): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(418): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(192): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(223): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(313): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(318): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(344): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(377): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(382): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(418): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(662): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:21 2013
+
+
+
+
+gravtree.c(192): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 192 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+gravtree.c(223): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 223 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+gravtree.c(295): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 295. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+gravtree.c(296): remark #30533: (LOOP) Compile with the -opt-subscript-in-range option to vectorize and/or parallelize the loop at line 296. [VERIFY] Make sure that no loop in the program contains or generates very large integers (typically very large integers >= 2^30).
+
+gravtree.c(295): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 295 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: GravDataIn, GravDataGet. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+gravtree.c(295): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 295 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+gravtree.c(313): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 313 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+gravtree.c(318): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 318 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+gravtree.c(344): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 344 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+gravtree.c(377): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 377 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+gravtree.c(382): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 382 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+gravtree.c(418): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 418 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+gravtree.c(565): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 565 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+Number of advice-messages emitted for this compilation session: 16.
+END OF GAP REPORT LOG
+domain.c(162): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+forcetree.c(2668): warning #181: argument is incompatible with corresponding format string conversion
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZ  .
+      ^
+
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+domain.c(452): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(439): (col. 7) remark: LOOP WAS VECTORI.
+D.
+domain.c(337): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(345): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(375): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(411): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(422): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(337): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(345): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(375): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(411): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(422): (col. 4) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+peano.c(46): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 46 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+peano.c(72): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 72 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+Number of advice-messages emitted for this compilation session: 2.
+END OF GAP REPORT LOG
+domain.c(937): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(947): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(947): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+forcetree.c(109): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(208): (col. 8) remark: BLOCK WAS VECTORIZED.
+domain.c(162): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+hydra.c(111): (col. 3) remark: LOOP WAS VECTORIZED.
+hydra.c(128): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+hydra.c(222): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(227): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(253): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(280): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(285): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(327): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(353): (col. 3) remark: LOOP WAS VECTORIZED.
+hydra.c(111): (col. 3) remark: LOOP WAS VECTORIZED.
+hydra.c(128): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+hydra.c(222): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(227): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(253): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(280): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(285): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(327): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(353): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:21 2013
+
+
+domain.c(165): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 165 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: NtypeLocal. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+domain.c(165): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 165 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+domain.c(803): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 803 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+domain.c(230): remark #30525: (PAR) Insert a "#pragma loop count min(128)" statement right before the loop at line 230 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 128 iterations.
+domain.c(733): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 733 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+domain.c(250): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 250 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+domain.c(307): remark #30525: (PAR) Insert a "#pragma loop count min(2048)" statement right before the loop at line 307 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 2048 iterations.
+domain.c(452): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 452 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+domain.c(337): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 337 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+domain.c(345): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 345 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+domain.c(375): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 375 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+domain.c(411): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 411. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+domain.c(411): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 411 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+domain.c(422): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 422 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+domain.c(901): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 901. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+domain.c(901): remark #30532: (LOOP) Store the value of the upper-bound expression (NumPart) of the loop at line 901 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = NumPart" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+domain.c(903): remark #30528: (PAR) Add "__declspec(const)" to the declaration of routine "peano_hilbert_key" in order to parallelize the loop at line 901. Alternatively, adding "__attribute__(concurrency_safe(profitable))" achieves a similar effect. [VERIFY] Make sure that the routine satisfies the semantics of this declaration. [ALTERNATIVE] Yet another way to help the loop being parallelized is to inline the routine with "#pragma forceinline recursive". This method does not guarantee parallelization.
+
+domain.c(901): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 901 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Key, KeySorted. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+domain.c(901): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 901 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+domain.c(947): remark #30525: (PAR) Insert a "#pragma loop count min(128)" statement right before the loop at line 947 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 128 iterations.
+Number of advice-messages emitted for this compilation session: 21.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:21 2013
+
+
+
+
+
+hydra.c(111): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 111 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+hydra.c(128): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 128 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+hydra.c(222): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 222 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+hydra.c(227): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 227 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+hydra.c(253): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 253 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+hydra.c(280): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 280 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+hydra.c(285): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 285 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+hydra.c(327): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 327 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+hydra.c(353): remark #30525: (PAR) Insert a "#pragma loop count min(16)" statement right before the loop at line 353 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 16 iterations.
+Number of advice-messages emitted for this compilation session: 13.
+END OF GAP REPORT LOG
+forcetree.c(894): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(894): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(1022): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(1022): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(2672): (col. 7) remark: LOOP WAS VECTORIZED.
+forcetree.c(2672): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+forcetree.c(2843): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 2843. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(2843): remark #30532: (LOOP) Store the value of the upper-bound expression (NumPart) of the loop at line 2843 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = NumPart" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+forcetree.c(2843): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 2843 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+forcetree.c(2846): remark #30532: (LOOP) Store the value of the upper-bound expression (NumPart) of the loop at line 2846 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = NumPart" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+forcetree.c(2846): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 2846 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+forcetree.c(208): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 208. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(350): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 350 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+forcetree.c(690): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 690. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(690): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 690 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+forcetree.c(840): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 840 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Nodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(840): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 840 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+forcetree.c(857): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 857 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Nodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(857): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 857 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+forcetree.c(350): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 350. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(360): remark #30531: (LOOP) Store the value of the upper-bound expression of the loop at line 374 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = upper-bound of loop" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then, replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+forcetree.c(360): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 360 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Nodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(360): remark #30523: (PAR) Assign a value to the variable(s) "subnode" at the beginning of the body of the loop in line 360. This will allow the loop to be parallelized. [VERIFY] Make sure that, in the original program, the variable(s) "subnode" read in any iteration of the loop has been defined earlier in the same iteration. [ALTERNATIVE] Another way is to use "#pragma parallel private(subnode)" to parallelize the loop. [VERIFY] The same conditions described previously must hold.
+
+forcetree.c(360): remark #30525: (PAR) Insert a "#pragma loop count min(8)" statement right before the loop at line 360 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 8 iterations.
+forcetree.c(928): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 928 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: P, Nodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(928): remark #30525: (PAR) Insert a "#pragma loop count min(64)" statement right before the loop at line 928 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 64 iterations.
+forcetree.c(894): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 894. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(894): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 894 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+forcetree.c(975): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 975 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Nodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(975): remark #30525: (PAR) Insert a "#pragma loop count min(8)" statement right before the loop at line 975 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 8 iterations.
+forcetree.c(928): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 928 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Father, Nodes, P. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(1055): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 1055 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Extnodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(1055): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 1055 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+forcetree.c(1022): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 1022. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(1022): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 1022 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+forcetree.c(1093): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 1093 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: Extnodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+forcetree.c(1093): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 1093 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+Number of advice-messages emitted for this compilation session: 31.
+END OF GAP REPORT LOG
+potential.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(83): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(152): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(157): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(183): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(207): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(241): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(277): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(83): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(152): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(157): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(183): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(207): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(241): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(277): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:52:22 2013
+
+
+
+
+potential.c(68): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 68 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+potential.c(83): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 83 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+potential.c(140): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 140. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+potential.c(141): remark #30533: (LOOP) Compile with the -opt-subscript-in-range option to vectorize and/or parallelize the loop at line 141. [VERIFY] Make sure that no loop in the program contains or generates very large integers (typically very large integers >= 2^30).
+
+potential.c(140): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 140 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: GravDataIn, GravDataGet. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+potential.c(140): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 140 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+potential.c(152): remark #30525: (PAR) Insert a "#pragma loop count min(1024)" statement right before the loop at line 152 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 1024 iterations.
+potential.c(157): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 157 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+potential.c(183): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 183 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+potential.c(207): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 207 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+potential.c(232): remark #30519: (PAR) Insert a "#pragma parallel" statement right before the loop at line 232 to parallelize the loop. [VERIFY] Make sure that these arrays in the loop do not have cross-iteration dependencies: P. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop.
+
+potential.c(232): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 232 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+potential.c(241): remark #30525: (PAR) Insert a "#pragma loop count min(512)" statement right before the loop at line 241 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 512 iterations.
+potential.c(263): remark #30525: (PAR) Insert a "#pragma loop count min(16)" statement right before the loop at line 263 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 16 iterations.
+potential.c(277): remark #30525: (PAR) Insert a "#pragma loop count min(256)" statement right before the loop at line 277 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 256 iterations.
+potential.c(328): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 328 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+potential.c(342): remark #30525: (PAR) Insert a "#pragma loop count min(32)" statement right before the loop at line 342 to parallelize the loop. [VERIFY] Make sure that the loop has a minimum of 32 iterations.
+Number of advice-messages emitted for this compilation session: 20.
+END OF GAP REPORT LOG

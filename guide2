@@ -1,0 +1,507 @@
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:25 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, MaxPart, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+run.c(161): (col. 3) remark: LOOP WAS VECTORIZED.
+run.c(196): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:26 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30760: (DTRANS) Remove unused field(s) 'TotN_gas, MaxPart, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, PeriodicBoundariesOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename' from the struct 'global_data_all_processes'. The fields: 'OutputDir' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:28 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(581): remark #30758: (DTRANS) Remove unused field(s) 'len, center, maxsoft' from the struct 'NODE'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(590): remark #30758: (DTRANS) Remove unused field(s) 'suns' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(593): remark #30758: (DTRANS) Remove unused field(s) 'mass, bitflags, sibling, nextnode, father' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Mass, Potential, OldAcc, ID, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(550): remark #30758: (DTRANS) Remove unused field(s) 'Left, Right, NumNgb, CurlVel, Rot, DhsmlDensityFactor, MaxSignalVel' from the struct 'sph_particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotN_gas, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, MinGasHsmlFractional, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 6.
+END OF GAP REPORT LOG
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+begrun.c(897): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:29 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Pos, Mass, Vel, GravAccel, Potential, OldAcc, ID, Type, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30760: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, MaxPart, MaxPartSph, TotNumOfForces, NumForcesSinceLastDomainDecomp, SnapshotFileCount, TimeLastStatistics, NumCurrentTiStep, Time, TimeStep, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, MinGasHsml, SofteningTable, ForceSoftening, MassTable' from the struct 'global_data_all_processes'. The fields: 'BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, GravityConstantInternal, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeBetStatistics, TimeBegin, TimeMax, TimeLimitCPU, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 2.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:30 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+global.c(48): (col. 7) remark: LOOP WAS VECTORIZED.
+global.c(70): (col. 7) remark: LOOP WAS VECTORIZED.
+global.c(158): (col. 2) remark: LOOP WAS VECTORIZED.
+global.c(162): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:32 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'OldAcc, ID, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PERMUTED LOOP WAS VECTORIZED.
+timestep.c(301): (col. 8) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(350): (col. 5) remark: LOOP WAS VECTORIZED.
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(593): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+timestep.c(613): (col. 7) remark: PERMUTED LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:33 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(550): remark #30758: (DTRANS) Remove unused field(s) 'Left, Right, NumNgb, DivVel, CurlVel, Rot, DhsmlDensityFactor' from the struct 'sph_particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Potential, OldAcc, GravCost' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotN_gas, MaxPart, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, TotNumOfForces, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, HubbleParam, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, TimeBegin, TimeStep, TimeMax, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+timestep.c(350): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 350 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: Extnodes, P. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+Number of advice-messages emitted for this compilation session: 4.
+END OF GAP REPORT LOG
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(166): (col. 3) remark: LOOP WAS VECTORIZED.
+init.c(152): (col. 5) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:35 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(550): remark #30758: (DTRANS) Remove unused field(s) 'Left, Right, NumNgb, Pressure, DivVel, CurlVel, Rot, DhsmlDensityFactor, MaxSignalVel' from the struct 'sph_particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(581): remark #30758: (DTRANS) Remove unused field(s) 'center, maxsoft' from the struct 'NODE'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(590): remark #30758: (DTRANS) Remove unused field(s) 'suns' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(593): remark #30758: (DTRANS) Remove unused field(s) 's, bitflags, sibling, nextnode' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Pos, ID, Type, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30760: (DTRANS) Remove unused field(s) 'TotN_gas, MaxPartSph, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, OmegaLambda, OmegaBaryon, HubbleParam, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeStep, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. The fields: 'InitCondFile' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 6.
+END OF GAP REPORT LOG
+restart.c(212): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(215): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(224): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(253): (col. 3) remark: LOOP WAS VECTORIZED.
+restart.c(262): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:36 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30756: (DTRANS) Split the structure 'global_data_all_processes' into two parts to improve data locality. Frequently accessed fields are 'MaxPart'; performance may improve by putting these fields into one structure and the remaining fields into another structure. Alternatively, performance may also improve by reordering the fields of the structure. Suggested field order: 'MaxPart, TreeAllocFactor, PartAllocFactor, MaxPartSph, NumFilesWrittenInParallel, TotNumPart, TotN_gas, Time, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that the restructuring is applied to field references in all source files of the application, and that the restructured code satisfies the original program semantics.
+
+allvars.h(258): remark #30760: (DTRANS) Remove unused field(s) 'BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. The fields: 'OutputDir, RestartFile' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+restart.c(212): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 212. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+restart.c(215): remark #30531: (LOOP) Store the value of the upper-bound expression of the loop at line 216 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = upper-bound of loop" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then, replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+restart.c(212): remark #30532: (LOOP) Store the value of the upper-bound expression (NumPart) of the loop at line 213 into a temporary local variable, and use this variable as the new upper-bound expression of the loop. To do this, insert a statement of the form "temp = NumPart" right before the loop, where "temp" is the newly created local variable. Make sure to choose a variable name that is unique. Then replace the loop's original upper-bound expression with "temp". [VERIFY] Make sure that the value of the upper-bound expression does not change throughout the entire execution of the loop.
+
+restart.c(212): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 212 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: Father, NumPart, MaxPart. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+restart.c(215): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 215 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: Nextnode, NumPart, MaxPart, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+restart.c(253): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 253 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: MaxPart, Nextnode, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+restart.c(262): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 262 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: DomainNodeIndex, MaxPart, MaxNodes. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+Number of advice-messages emitted for this compilation session: 9.
+END OF GAP REPORT LOG
+io.c(570): warning #188: enumerated type mixed with another type
+    for(i = 0; i < IO_NBLOCKS; i++)
+          ^
+
+io.c(815): warning #188: enumerated type mixed with another type
+    for(blocknr = 0; blocknr < IO_NBLOCKS; blocknr++)
+                ^
+
+io.c(73): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(84): (col. 3) remark: PERMUTED LOOP WAS VECTORIZED.
+io.c(697): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(703): (col. 4) remark: LOOP WAS VECTORIZED.
+io.c(720): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(472): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+io.c(515): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(502): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(472): (col. 3) remark: LOOP WAS VECTORIZED.
+io.c(515): (col. 7) remark: LOOP WAS VECTORIZED.
+io.c(502): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:38 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(550): remark #30758: (DTRANS) Remove unused field(s) 'Left, Right, NumNgb, Pressure, VelPred, DivVel, CurlVel, Rot, DhsmlDensityFactor, MaxSignalVel' from the struct 'sph_particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'OldAcc, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30760: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, MaxPart, MaxPartSph, ICFormat, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, OmegaBaryon, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, TimeBegin, TimeStep, TimeMax, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. The fields: 'OutputDir, SnapshotFileBase' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(628): remark #30758: (DTRANS) Remove unused field(s) 'flag_entropy_instead_u, fill' from the struct 'io_header'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+io.c(472): remark #30513: (VECT) Insert a "#pragma ivdep" statement right before the loop at line 472 to vectorize the loop. [VERIFY] Make sure that these arrays in the loop do not have unsafe cross-iteration dependencies: typelist, npart, MassTable. A cross-iteration dependency exists if a memory location is modified in an iteration of the loop and accessed (by a read or a write) in another iteration of the loop. Make sure that there are no such dependencies, or that any cross-iteration dependencies can be safely ignored.
+
+Number of advice-messages emitted for this compilation session: 5.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:39 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotNumPart, MaxPart, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_EnsureNgb, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+read_ic.c(157): warning #181: argument is incompatible with corresponding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                             ^
+
+read_ic.c(157): warning #181: argument is incompatible with corresponding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                                           ^
+
+read_ic.c(157): warning #181: argument is incompatible with corresponding format string conversion
+        printf("precision size: %d vs %d double %d single\n",sizeof(FLOAT),sizeof(double),sizeof(float));
+                                                                                          ^
+
+read_ic.c(481): warning #188: enumerated type mixed with another type
+    for(blocknr = 0; blocknr < IO_NBLOCKS; blocknr++)
+                ^
+
+read_ic.c(134): (col. 4) remark: LOOP WAS VECTORIZED.
+read_ic.c(178): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(206): (col. 5) remark: LOOP WAS VECTORIZED.
+read_ic.c(299): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(293): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(288): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(283): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(278): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(267): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(299): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(293): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(288): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(283): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(278): (col. 7) remark: LOOP WAS VECTORIZED.
+read_ic.c(267): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:41 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(550): remark #30758: (DTRANS) Remove unused field(s) 'Left, Right, NumNgb, Pressure, DtEntropy, HydroAccel, VelPred, DivVel, CurlVel, Rot, DhsmlDensityFactor, MaxSignalVel' from the struct 'sph_particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'GravAccel, Potential, OldAcc, Ti_endstep, Ti_begstep, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(628): remark #30758: (DTRANS) Remove unused field(s) 'redshift, flag_sfr, flag_feedback, flag_cooling, BoxSize, Omega0, OmegaLambda, HubbleParam, flag_stellarage, flag_metals, fill' from the struct 'io_header'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'BoxSize, SnapFormat, NumFilesPerSnapshot, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, MinGasTemp, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+read_ic.c(134): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 134. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+read_ic.c(288): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 288. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+Number of advice-messages emitted for this compilation session: 6.
+END OF GAP REPORT LOG
+ngb.c(77): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+ngb.c(211): warning #266: function "omp_get_thread_num" declared implicitly
+    tid = omp_get_thread_num();
+          ^
+
+ngb.c(342): warning #266: function "omp_get_thread_num" declared implicitly
+    tid = omp_get_thread_num();
+          ^
+
+ngb.c(79): (col. 3) remark: LOOP WAS VECTORIZED.
+ngb.c(213): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:42 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(581): remark #30758: (DTRANS) Remove unused field(s) 'maxsoft' from the struct 'NODE'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Mass, Vel, GravAccel, Potential, OldAcc, ID, Ti_endstep, Ti_begstep, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:44 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+allocate.c(123): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
+  	                                                                                           ^
+
+allocate.c(124): warning #181: argument is incompatible with corresponding format string conversion
+   	printf("\nAllocated %g MByte for exportflag storage. %d %d %d\n\n", bytes / (1024.0 * 1024.0),NTask,All.MaxPart, sizeof(char));
+   	                                                                                                                 ^
+
+allocate.c(134): warning #181: argument is incompatible with corresponding format string conversion
+  	  printf("failed to allocate memory for `SphP' (%g MB) %d.\n", bytes / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                          ^
+
+allocate.c(140): warning #181: argument is incompatible with corresponding format string conversion
+  	printf("Allocated %g MByte for storage of SPH data. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct sph_particle_data));
+  	                                                                                            ^
+
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:45 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 1.
+END OF GAP REPORT LOG
+density.c(505): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+density.c(91): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+density.c(101): (col. 3) remark: LOOP WAS VECTORIZED.
+density.c(117): (col. 4) remark: LOOP WAS VECTORIZED.
+density.c(186): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(191): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(217): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(242): (col. 8) remark: LOOP WAS VECTORIZED.
+density.c(247): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(290): (col. 5) remark: LOOP WAS VECTORIZED.
+density.c(424): (col. 7) remark: LOOP WAS VECTORIZED.
+density.c(456): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:46 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(509): remark #30755: (DTRANS) Reordering the fields of the structure 'particle_data' will improve data locality. Suggested field order: 'Pos, Mass, Ti_endstep, Ti_begstep, Type, ID, Vel, GravAccel, Potential, OldAcc, GravCost, AphysOld'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that the restructured code satisfies the original program semantics.
+
+allvars.h(550): remark #30755: (DTRANS) Reordering the fields of the structure 'sph_particle_data' will improve data locality. Suggested field order: 'VelPred, Rot, Density, NumNgb, DivVel, DhsmlDensityFactor, Hsml, Right, Left, Entropy, Pressure, DtEntropy, CurlVel, HydroAccel, MaxSignalVel'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that the restructured code satisfies the original program semantics.
+
+allvars.h(509): remark #30760: (DTRANS) Remove unused field(s) 'Vel, GravAccel, Potential, OldAcc, GravCost, AphysOld' from the struct 'particle_data'. The fields: 'Pos' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(550): remark #30760: (DTRANS) Remove unused field(s) 'HydroAccel, MaxSignalVel' from the struct 'sph_particle_data'. The fields: 'VelPred' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 4.
+END OF GAP REPORT LOG
+gravtree.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(662): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(192): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(223): (col. 7) remark: LOOP WAS VECTORIZED.
+gravtree.c(313): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(318): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(344): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(377): (col. 4) remark: LOOP WAS VECTORIZED.
+gravtree.c(382): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(418): (col. 8) remark: LOOP WAS VECTORIZED.
+gravtree.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(565): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+gravtree.c(662): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:49 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(706): remark #30758: (DTRANS) Remove unused field(s) 'Acc, Potential' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Mass, Vel, Potential, ID, Ti_begstep, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotN_gas, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, NumForcesSinceLastDomainDecomp, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, OmegaBaryon, HubbleParam, PeriodicBoundariesOn, ResubmitOn, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, TimeBegin, TimeMax, Timebase_interval, Ti_nextoutput, TimeLimitCPU, CPU_Gravity, CPU_Potential, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MassTable, vsurf_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+hydra.c(406): warning #266: function "omp_get_thread_num" declared implicitly
+    tid =  omp_get_thread_num();
+           ^
+
+hydra.c(111): (col. 3) remark: LOOP WAS VECTORIZED.
+hydra.c(128): (col. 7) remark: LOOP WAS VECTORIZED.
+hydra.c(222): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(227): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(253): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(280): (col. 4) remark: LOOP WAS VECTORIZED.
+hydra.c(285): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(327): (col. 8) remark: LOOP WAS VECTORIZED.
+hydra.c(353): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:51 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(509): remark #30755: (DTRANS) Reordering the fields of the structure 'particle_data' will improve data locality. Suggested field order: 'Pos, Mass, Ti_endstep, Ti_begstep, Vel, GravAccel, Potential, OldAcc, ID, Type, GravCost, AphysOld'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that the restructured code satisfies the original program semantics.
+
+allvars.h(550): remark #30756: (DTRANS) Split the structure 'sph_particle_data' into two parts to improve data locality. Frequently accessed fields are 'Density, Hsml, VelPred, Pressure, DhsmlDensityFactor, DivVel'; performance may improve by putting these fields into one structure and the remaining fields into another structure. Alternatively, performance may also improve by reordering the fields of the structure. Suggested field order: 'Density, Hsml, VelPred, Pressure, DhsmlDensityFactor, DivVel, CurlVel, DtEntropy, HydroAccel, MaxSignalVel, Entropy, Left, Right, NumNgb, Rot'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that the restructuring is applied to field references in all source files of the application, and that the restructured code satisfies the original program semantics.
+
+allvars.h(509): remark #30760: (DTRANS) Remove unused field(s) 'Vel, GravAccel, Potential, OldAcc, ID, Type, GravCost, AphysOld' from the struct 'particle_data'. The fields: 'Pos' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(550): remark #30760: (DTRANS) Remove unused field(s) 'Entropy, Left, Right, NumNgb, Rot' from the struct 'sph_particle_data'. The fields: 'VelPred' were conservatively assumed by the compiler as referenced since their address is taken. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 4.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:53 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+domain.c(162): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(452): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(337): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(345): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(375): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(411): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(422): (col. 4) remark: LOOP WAS VECTORIZED.
+domain.c(937): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(947): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(162): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(173): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(230): (col. 7) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(250): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(307): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(733): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(803): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+domain.c(851): (col. 3) remark: LOOP WAS VECTORIZED.
+domain.c(859): (col. 7) remark: LOOP WAS VECTORIZED.
+domain.c(879): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:54 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeForce, BunchSizeDensity, BunchSizeHydro, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, G, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, Hubble, Omega0, OmegaLambda, OmegaBaryon, HubbleParam, ComovingIntegrationOn, PeriodicBoundariesOn, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeConstruction, CPU_TreeWalk, CPU_Gravity, CPU_Potential, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, SofteningTable, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+domain.c(411): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 411. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+Number of advice-messages emitted for this compilation session: 2.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:56 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+potential.c(68): (col. 3) remark: LOOP WAS VECTORIZED.
+potential.c(83): (col. 7) remark: LOOP WAS VECTORIZED.
+potential.c(152): (col. 4) remark: LOOP WAS VECTORIZED.
+potential.c(157): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(183): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(207): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(241): (col. 8) remark: LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(263): (col. 3) remark: PARTIAL LOOP WAS VECTORIZED.
+potential.c(277): (col. 3) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:57 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+allvars.h(706): remark #30758: (DTRANS) Remove unused field(s) 'Acc' from the struct '<unnamed>'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(509): remark #30758: (DTRANS) Remove unused field(s) 'Vel, GravAccel, ID, Ti_endstep, Ti_begstep, GravCost, AphysOld' from the struct 'particle_data'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+allvars.h(258): remark #30758: (DTRANS) Remove unused field(s) 'TotNumPart, TotN_gas, MaxPart, MaxPartSph, BoxSize, ICFormat, SnapFormat, NumFilesPerSnapshot, NumFilesWrittenInParallel, BufferSize, BunchSizeDensity, BunchSizeHydro, BunchSizeDomain, PartAllocFactor, TreeAllocFactor, DesNumNgb, MaxNumNgbDeviation, ArtBulkViscConst, InitGasTemp, MinGasTemp, MinEgySpec, TotNumOfForces, NumForcesSinceLastDomainDecomp, UnitTime_in_s, UnitMass_in_g, UnitVelocity_in_cm_per_s, UnitLength_in_cm, UnitPressure_in_cgs, UnitDensity_in_cgs, UnitCoolingRate_in_cgs, UnitEnergy_in_cgs, UnitTime_in_Megayears, GravityConstantInternal, OmegaBaryon, HubbleParam, ResubmitOn, TypeOfOpeningCriterion, TypeOfTimestepCriterion, OutputListOn, SnapshotFileCount, TimeBetSnapshot, TimeOfFirstSnapshot, CpuTimeBetRestartFile, TimeLastRestartFile, TimeBetStatistics, TimeLastStatistics, NumCurrentTiStep, Time, TimeBegin, TimeStep, TimeMax, Timebase_interval, Ti_Current, Ti_nextoutput, TimeLimitCPU, CPU_TreeWalk, CPU_Gravity, CPU_Domain, CPU_Snapshot, CPU_Total, CPU_CommSum, CPU_Imbalance, CPU_HydCompWalk, CPU_HydCommSumm, CPU_HydImbalance, CPU_Hydro, CPU_EnsureNgb, CPU_Predict, CPU_TimeLine, CPU_PM, CPU_Peano, ErrTolTheta, ErrTolForceAcc, ErrTolIntAccuracy, MinSizeTimestep, MaxSizeTimestep, oMaxSizeTimestep, ShortStep, MaxRMSDisplacementFac, CourantFac, TreeDomainUpdateFrequency, MinGasHsmlFractional, MinGasHsml, SofteningGas, SofteningHalo, SofteningDisk, SofteningBulge, SofteningStars, SofteningBndry, SofteningGasMaxPhys, SofteningHaloMaxPhys, SofteningDiskMaxPhys, SofteningBulgeMaxPhys, SofteningStarsMaxPhys, SofteningBndryMaxPhys, ForceSoftening, MassTable, BHmass_ryan, rp_ryan, vsurf_ryan, xchange_ryan, VX, VY, VZ, InitCondFile, OutputDir, SnapshotFileBase, EnergyFile, CpuFile, InfoFile, TimingsFile, RestartFile, ResubmitCommand, OutputListFilename, OutputListTimes, OutputListLength' from the struct 'global_data_all_processes'. [VERIFY] The suggestion is based on the field references in the current compilation. Please make sure that there are no references to these fields across the entire application.
+
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+forcetree.c(2668): warning #181: argument is incompatible with corresponding format string conversion
+  	       sizeof(struct NODE) + sizeof(struct extNODE));
+  	       ^
+
+forcetree.c(109): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(208): (col. 8) remark: BLOCK WAS VECTORIZED.
+forcetree.c(439): (col. 7) remark: LOOP WAS VECTORIZED.
+forcetree.c(894): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(1022): (col. 3) remark: LOOP WAS VECTORIZED.
+forcetree.c(2672): (col. 7) remark: LOOP WAS VECTORIZED.
+GAP REPORT LOG OPENED ON Fri Jan 25 20:44:58 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+forcetree.c(208): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 208. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(894): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 894. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+forcetree.c(1022): remark #30534: (LOOP) Add -ansi-alias option for better type-based disambiguation analysis by the compiler if appropriate (the option will apply for the entire compilation). This will improve optimizations for the loop at line 1022. [VERIFY] Make sure that the semantics of this option is obeyed for the entire compilation.
+
+Number of advice-messages emitted for this compilation session: 3.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:45:00 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:45:02 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:45:03 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:45:04 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
+GAP REPORT LOG OPENED ON Fri Jan 25 20:45:05 2013
+
+remark #30761: Add -parallel option if you want the compiler to generate recommendations for improving auto-parallelization.
+
+Number of advice-messages emitted for this compilation session: 0.
+END OF GAP REPORT LOG
