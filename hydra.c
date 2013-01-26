@@ -3,6 +3,9 @@
 #include <string.h>
 #include <math.h>
 #include <mpi.h>
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 #include <gsl/gsl_math.h>
 #include "allvars.h"
 #include "proto.h"

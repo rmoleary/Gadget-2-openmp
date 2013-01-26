@@ -107,11 +107,12 @@ void density(void)
   /* we will repeat the whole thing for those particles where we didn't
    * find enough neighbours
    */
+  int oldI = 0;
   do
     {
       i = 0;			/* beginn with this index */
       ntotleft = ntot;		/* particles left for all tasks together */
-
+      oldI = i;
       while(ntotleft > 0)
 	{
 	  for(j = 0; j < NTask; j++)
@@ -121,7 +122,6 @@ void density(void)
 	  tstart = second();
 	  nexport = 0;
 	  ndone = 0;
-	  int oldI = i;
 #ifdef _OPENMP
 #pragma omp parallel for reduction(+:ndone)
 #endif	  
