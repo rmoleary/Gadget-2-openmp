@@ -3,7 +3,9 @@
 #include <math.h>
 #include <float.h>
 #include <mpi.h>
-
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 #include "allvars.h"
 #include "proto.h"
 
@@ -15,14 +17,44 @@ double force_add_ryan(long int particle);//, int i);
 double force_add_ryan(long int particle){//, int i){
   //calcute the force due to black hole
   //assume G = 1, M = Msun, R = Rsun
-  double bhmass = 1.e6;
+  double bhmass = All.BHmass_ryan;
   double pos[3];//,vel[3];
   
   int i = 0;
+#ifdef MOVE
   pos[0] = P[particle].Pos[0];
   pos[1] = P[particle].Pos[1];
   pos[2] = P[particle].Pos[2];
+#else
+  double bhpos[3];
+  //use current time? to calculate the position of the bh in frame of com of star
+  //then calculate offset positions, and offset velocities, and subtract normal force
+
+  double A, B;
+  double currenttime = All.Time-All.xchange_ryan;
+  double  rpt = All.rp_ryan*pow(All.BHmass_ryan/1.e6,1./3.);
+  A = 1.5*sqrt(All.BHmass_ryan/2./rpt/rpt/rpt)*currenttime;
+  B = pow((A+sqrt(A*A+1.)),1./3.);
+  double nu = 2.*atan(B-1./B);
+  double bhcdist = 2./(1.+cos(nu))*rpt;
+  bhpos[0] = bhcdist*sin(nu);
+  bhpos[1] = -bhcdist*cos(nu);
+  bhpos[2] = 0.;
+ 
+  pos[0] = P[particle].Pos[0]-bhpos[0];
+  pos[1] = P[particle].Pos[1]-bhpos[1];
+  pos[2] = P[particle].Pos[2]-bhpos[2];
+
+  double cforce[3];
+  // double bhcdistsq = bhpos[0]*bhpos[0]+bhpos[1]*bhpos[1]+bhpos[2]*bhpos[2];
+  //  double bhcdist = sqrt(bhcdistsq);
+  double ctforce = bhmass/bhcdist/bhcdist/bhcdist;
   
+  cforce[0] = ctforce*bhpos[0];
+  cforce[1] = ctforce*bhpos[1];
+  cforce[2] = ctforce*bhpos[2];
+
+#endif
   //vel = P[particle].Vel;
   double distsq = pos[0]*pos[0]+pos[1]*pos[1]+pos[2]*pos[2];
   double dist = sqrt(distsq);
@@ -34,10 +66,15 @@ double force_add_ryan(long int particle){//, int i){
   double bhmdistsq = bhmass/distsq;
   double bhmdist = bhmass/dist;
   for(i= 0; i < 3; i++){
+#ifdef MOVE
     force[i] = -bhmdistsq * pos[i];
+#else
+    force[i] = -bhmdistsq * pos[i]-cforce[i];
+#endif
   }
   
 #ifdef PN1
+#ifdef MOVE
   double vel[3];
   double invc= 0.00145713545; 
   vel[0] = P[particle].Vel[0]*invc;
@@ -47,7 +84,7 @@ double force_add_ryan(long int particle){//, int i){
   double poxveldot = pos[0]*vel[0]+pos[1]*vel[1]+pos[2]*vel[2];
   double velsq =  vel[0]*vel[0]+vel[1]*vel[1]+vel[2]*vel[2];
   for(i = 0; i < 3 ; i++){
-    force[i]=force[i]*(1.-4.*bhmdist*invc*invc+velsq);
+    force[i]=force[i]*(1.-All.G*4.*bhmdist*invc*invc+velsq); 
   }
   for(i=0; i<3; i++){
     force[i]+=bhmdistsq*vel[i]*4.*poxveldot;
@@ -68,6 +105,7 @@ double force_add_ryan(long int particle){//, int i){
   sforce[iz]+= vel[iy]*3.*pos[iz]*pos[ix]-3.*vel[ix]*pos[iz]*pos[iy];
   
   double rescale = 2.*spinz*bhmdistsq;
+  rescale = rescale * All.G*bhmdist*invc*invc; //missing from previous derivation?
 
   force[ix]=force[ix]+sforce[ix]*rescale;
   force[iy]=force[iy]+sforce[iy]*rescale;
@@ -76,6 +114,7 @@ double force_add_ryan(long int particle){//, int i){
   
   
 #endif //end pn15
+#endif //end move (no pnextensions right now
 #endif //end pn1
   P[particle].GravAccel[0] += force[0];
   P[particle].GravAccel[1] += force[1];
@@ -175,7 +214,8 @@ void gravity_tree(void)
 
   i = 0;			/* beginn with this index */
   ntotleft = ntot;		/* particles left for all tasks together */
-
+  // omp_set_dynamic(0); 
+  //  omp_set_num_threads(4);
   while(ntotleft > 0)
     {
       iter++;
@@ -185,21 +225,47 @@ void gravity_tree(void)
 
       /* do local particles and prepare export list */
       tstart = second();
-      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
+      ndone = 0;
+      nexport = 0;
+      int oldI = i;
+      //      int lExportflag[NumPart*NTask+NTask];
+      //    int tid;
+      //put in parallel here
+#ifdef _OPENMP
+      double tnthreads = .5*.25/omp_get_max_threads();
+      int csize = ceil((NumPart-oldI)*tnthreads);
+      printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
+#pragma omp parallel for reduction(+:ndone,costtotal) schedule(guided,8)
+#endif
+      for( i=oldI;  i < NumPart ; i++){
+	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
+#ifdef _OPENMP
+	//	if(i==100){
+	//  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	//  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	//	} 
+#endif
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
 
 	    for(j = 0; j < NTask; j++)
-	      Exportflag[j] = 0;
+	      Exportflag2[i*NTask+j] = 0; //need to make exportflag local
 #ifndef PMGRID
 	    costtotal += force_treeevaluate(i, 0, &ewaldcount);
 #else
 	    costtotal += force_treeevaluate_shortrange(i, 0);
 #endif
+	  }
+      }
+
+      printf("Numpart %d %d t%d %g \n", NumPart, ndone, ThisTask, second()-tstart);    
+      for(i = oldI; i< NumPart; i++){
+	if(P[i].Ti_endstep==All.Ti_Current){
+	  
 	    for(j = 0; j < NTask; j++)
 	      {
-		if(Exportflag[j])
+		if(Exportflag2[i*NTask+j])
 		  {
 		    for(k = 0; k < 3; k++)
 		      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
@@ -220,6 +286,7 @@ void gravity_tree(void)
 		  }
 	      }
 	  }
+      }
       tend = second();
       timetree += timediff(tstart, tend);
 
@@ -239,7 +306,7 @@ void gravity_tree(void)
       timeimbalance += timediff(tstart, tend);
 
       /* now do the particles that need to be exported */
-
+    
       for(level = 1; level < (1 << PTask); level++)
 	{
 	  tstart = second();
@@ -281,8 +348,12 @@ void gravity_tree(void)
 	  tend = second();
 	  timecommsumm += timediff(tstart, tend);
 
-
+	
 	  tstart = second();
+#ifdef _OPENMP
+	  csize = ceil(nbuffer[ThisTask]*tnthreads);
+#pragma omp parallel for reduction(+:costtotal)  schedule(guided,8)
+#endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    {
 #ifndef PMGRID
@@ -292,13 +363,15 @@ void gravity_tree(void)
 #endif
 	    }
 	  tend = second();
+	  printf("nuffer[ThisTask] %d t%d  %g\n", nbuffer[ThisTask], ThisTask,tend-tstart);
+
 	  timetree += timediff(tstart, tend);
 
 	  tstart = second();
 	  MPI_Barrier(MPI_COMM_WORLD);
 	  tend = second();
 	  timeimbalance += timediff(tstart, tend);
-
+	
 	  /* get the result */
 	  tstart = second();
 	  for(j = 0; j < NTask; j++)
@@ -355,7 +428,7 @@ void gravity_tree(void)
       MPI_Allgather(&ndone, 1, MPI_INT, ndonelist, 1, MPI_INT, MPI_COMM_WORLD);
       for(j = 0; j < NTask; j++)
 	ntotleft -= ndonelist[j];
-    }
+      }
 
   free(ndonelist);
   free(nsend);
@@ -390,13 +463,20 @@ void gravity_tree(void)
 	//P[i].GravAccel[0]+=force_add_ryan(i,0);
 	//P[i].GravAccel[1]+=force_add_ryan(i,1);
 	//P[i].GravAccel[2]+=force_add_ryan(i,2);
-	force_add_ryan(i);
+	//	force_add_ryan(i);
+#ifdef RELAX
+        P[i].GravAccel[0] -= P[i].Vel[0];
+        P[i].GravAccel[1] -= P[i].Vel[1];
+        P[i].GravAccel[2] -= P[i].Vel[2];
+#endif
+
 
 	ax = P[i].GravAccel[0];//+force_add_ryan(i,0);
 	ay = P[i].GravAccel[1];//+force_add_ryan(i,1);
 	az = P[i].GravAccel[2];//+force_add_ryan(i,2);
 #endif
 	P[i].OldAcc = sqrt(ax * ax + ay * ay + az * az);
+	force_add_ryan(i); //moved force add here so that the opening criteria are determined by the star not the black hole acceleration
       }
 
 
