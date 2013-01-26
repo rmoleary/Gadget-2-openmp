@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <mpi.h>
-#ifdef _OPENMPI
+#ifdef _OPENMP
 #include <omp.h>
 #endif
 #include "allvars.h"
