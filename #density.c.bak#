@@ -120,31 +120,19 @@ void density(void)
 
 	  /* do local particles and prepare export list */
 	  tstart = second();
-	  nexport = 0;
-	  ndone = 0;
-#ifdef _OPENMP
-#pragma omp parallel for reduction(+:ndone)
-#endif	  
-	  //	  for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeDensity - NTask; i++)
-	  for(i=oldI; i <N_gas ; i++){
+	  for(nexport = 0, ndone = 0; i < N_gas && nexport < All.BunchSizeDensity - NTask; i++)
 	    if(P[i].Ti_endstep == All.Ti_Current)
 	      {
 		ndone++;
 
-		for(j = 0; j < NTask; j++){
-		  //		  printf("#ef  %d %d %d \n",i,NTask,j);
-		  Exportflag2[i*NTask+j] = 0;
+		for(j = 0; j < NTask; j++)
+		  Exportflag[j] = 0;
 
-		}
 		density_evaluate(i, 0);
-	      }
-	  }
-	  for(i = oldI; i<N_gas; i++){
-	    if(P[i].Ti_endstep == All.Ti_Current)
-	      {
+
 		for(j = 0; j < NTask; j++)
 		  {
-		    if(Exportflag2[i*NTask+j])
+		    if(Exportflag[j])
 		      {
 			DensDataIn[nexport].Pos[0] = P[i].Pos[0];
 			DensDataIn[nexport].Pos[1] = P[i].Pos[1];
@@ -160,8 +148,6 @@ void density(void)
 		      }
 		  }
 	      }
-	  }
-	  oldI = N_gas;
 	  tend = second();
 	  timecomp += timediff(tstart, tend);
 
@@ -223,9 +209,6 @@ void density(void)
 
 
 	      tstart = second();
-#ifdef _OPENMP
-#pragma omp parallel for
-#endif
 	      for(j = 0; j < nbuffer[ThisTask]; j++)
 		density_evaluate(j, 1);
 	      tend = second();
@@ -302,16 +285,11 @@ void density(void)
 	    ntotleft -= ndonelist[j];
 	}
 
-    
+
 
       /* do final operations on results */
       tstart = second();
-      npleft = 0;
-      int npright = 0;
-      //#ifdef _OPENMP
-      //#pragma omp parallel for reduction(+:npleft,npright) private(i,dt_entr)
-      //#endif
-      for(i = 0; i < N_gas; i++)
+      for(i = 0, npleft = 0; i < N_gas; i++)
 	{
 	  if(P[i].Ti_endstep == All.Ti_Current)
 	    {
@@ -345,7 +323,7 @@ void density(void)
 		    if((SphP[i].Right - SphP[i].Left) < 1.0e-3 * SphP[i].Left)
 		      {
 			/* this one should be ok */
-			npright++;
+			npleft--;
 			P[i].Ti_endstep = -P[i].Ti_endstep - 1;	/* Mark as inactive */
 			continue;
 		      }
@@ -377,10 +355,8 @@ void density(void)
 		    SphP[i].Hsml = pow(0.5 * (pow(SphP[i].Left, 3) + pow(SphP[i].Right, 3)), 1.0 / 3);
 		  else
 		    {
-		      if(SphP[i].Right == 0 && SphP[i].Left == 0){
-			printf(" %d %g %g %d \n", i, SphP[i].Right, SphP[i].Left, ThisTask);
+		      if(SphP[i].Right == 0 && SphP[i].Left == 0)
 			endrun(8188);	/* can't occur */
-}
 
 		      if(SphP[i].Right == 0 && SphP[i].Left > 0)
 			{
@@ -414,22 +390,21 @@ void density(void)
 		P[i].Ti_endstep = -P[i].Ti_endstep - 1;	/* Mark as inactive */
 	    }
 	}
-      npleft -= npright;
       tend = second();
       timecomp += timediff(tstart, tend);
-      
+
 
       numlist = malloc(NTask * sizeof(int) * NTask);
       MPI_Allgather(&npleft, 1, MPI_INT, numlist, 1, MPI_INT, MPI_COMM_WORLD);
       for(i = 0, ntot = 0; i < NTask; i++)
 	ntot += numlist[i];
       free(numlist);
-      
+
       if(ntot > 0)
 	{
 	  if(iter == 0)
 	    tstart_ngb = second();
-	  
+
 	  iter++;
 
 	  if(iter > 0 && ThisTask == 0)
@@ -499,14 +474,9 @@ void density_evaluate(int target, int mode)
   double dvx, dvy, dvz, rotv[3];
   double weighted_numngb, dhsmlrho;
   FLOAT *pos, *vel;
-  int ptarget = 0;
-  int tid = 0;
-#ifdef _OPENMP
-  tid =  omp_get_thread_num();
-#endif
+
   if(mode == 0)
     {
-      ptarget = target;
       pos = P[target].Pos;
       vel = SphP[target].VelPred;
       h = SphP[target].Hsml;
@@ -535,11 +505,11 @@ void density_evaluate(int target, int mode)
   numngb = 0;
   do
     {
-      numngb_inbox = ngb_treefind_variable(&pos[0], h, &startnode,ptarget);
+      numngb_inbox = ngb_treefind_variable(&pos[0], h, &startnode);
 
       for(n = 0; n < numngb_inbox; n++)
 	{
-	  j = Ngblist[tid*MAX_NGB+n];
+	  j = Ngblist[n];
 
 	  dx = pos[0] - P[j].Pos[0];
 	  dy = pos[1] - P[j].Pos[1];

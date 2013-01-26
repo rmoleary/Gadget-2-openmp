@@ -122,7 +122,7 @@ void hydro_force(void)
 
   i = 0;			/* first particle for this task */
   ntotleft = ntot;		/* particles left for all tasks together */
-  int oldI = i;
+
   while(ntotleft > 0)
     {
       for(j = 0; j < NTask; j++)
@@ -130,7 +130,7 @@ void hydro_force(void)
 
       /* do local particles and prepare export list */
       tstart = second();
-
+      int oldI = i;
       nexport = 0;
       ndone = 0;
       //      printf("star hydra %d %d %d   %d \n", i, ntotleft, ThisTask,N_gas);
@@ -140,6 +140,16 @@ void hydro_force(void)
 #pragma omp parallel for  reduction(+:ndone) schedule(guided,8)
 #endif	  
       for(i=oldI; i<N_gas; i++){
+#ifdef _OPENMP
+	//	if(i==100){
+	//	  printf("#hyopcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	//	  printf("#hyproc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	//	  fflush(stdout);
+	  //	}
+	
+#endif
+	  //	  printf("check go %d %d\n",i,ThisTask);
+	  //fflush(stdout);
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
