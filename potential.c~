@@ -82,7 +82,7 @@ void compute_potential(void)
     {
       for(j = 0; j < NTask; j++)
 	nsend_local[j] = 0;
-    
+
       /* do local particles and prepare export list */
       //for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
       nexport = 0;
@@ -94,7 +94,7 @@ void compute_potential(void)
       printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
 #pragma omp parallel for reduction(+:ndone) schedule(guided,8)
 #endif
-      for( i=oldI;  i < NumPart ; i++)
+      for( i=oldI;  i < NumPart ; i++){
 	{
 	  ndone++;
 
@@ -107,7 +107,7 @@ void compute_potential(void)
 	  force_treeevaluate_potential_shortrange(i, 0);
 #endif
 	}
-      for( i=oldI;  i < NumPart ; i++)
+      for( i=oldI;  i < NumPart ; i++){
 	{
 	  for(j = 0; j < NTask; j++)
 	    {
@@ -133,7 +133,7 @@ void compute_potential(void)
 		}
 	    }
 	}
-    
+      }
       oldI = NumPart;
       qsort(GravDataIndexTable, nexport, sizeof(struct gravdata_index), grav_tree_compare_key);
 

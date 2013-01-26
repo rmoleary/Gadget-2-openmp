@@ -2113,7 +2113,7 @@ void force_treeevaluate_potential(int target, int mode)
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag2[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 	      no = Nextnode[no - MaxNodes];
 	      continue;
@@ -2389,7 +2389,7 @@ void force_treeevaluate_potential_shortrange(int target, int mode)
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag2[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 	      no = Nextnode[no - MaxNodes];
 	      continue;
@@ -2443,7 +2443,7 @@ void force_treeevaluate_potential_shortrange(int target, int mode)
 	    {
 	      if(mode == 0)
 		{
-		  Exportflag2[target*NTask+DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
+		  Exportflag[DomainTask[no - (All.MaxPart + MaxNodes)]] = 1;
 		}
 	      no = Nextnode[no - MaxNodes];
 	      continue;
