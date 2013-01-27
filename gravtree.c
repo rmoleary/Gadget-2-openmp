@@ -216,91 +216,79 @@ void gravity_tree(void)
   ntotleft = ntot;		/* particles left for all tasks together */
   // omp_set_dynamic(0); 
   //  omp_set_num_threads(4);
-
-
-
-  for(j = 0; j < NTask; j++)
-    nsend_local[j] = 0;
-
-  /* do local particles and prepare export list */
-  tstart = second();
-  ndone = 0;
-  nexport = 0;
-  
-#ifdef _OPENMP
-#pragma omp parallel for reduction(+:ndone,costtotal) schedule(guided,8)
-#endif
-  for( i=0;  i < NumPart ; i++){
-    //      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
-    if(P[i].Ti_endstep == All.Ti_Current)
-      {
-	ndone++;
-	
-	for(j = 0; j < NTask; j++)
-	  Exportflag2[i*NTask+j] = 0; //need to make exportflag local
-#ifndef PMGRID
-	costtotal += force_treeevaluate(i, 0, &ewaldcount);
-#else
-	costtotal += force_treeevaluate_shortrange(i, 0);
-#endif
-      }
-  }
-
-  printf("Numpart %d %d t%d %g \n", NumPart, ndone, ThisTask, second()-tstart);    
-  for(i = 0; i< NumPart; i++){
-    if(P[i].Ti_endstep==All.Ti_Current){
-	  
-      for(j = 0; j < NTask; j++)
-	{
-	  if(Exportflag2[i*NTask+j])
-	    {
-	      for(k = 0; k < 3; k++)
-		GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
-#ifdef UNEQUALSOFTENINGS
-	      GravDataGet[nexport].Type = P[i].Type;
-#ifdef ADAPTIVE_GRAVSOFT_FORGAS
-	      if(P[i].Type == 0)
-		GravDataGet[nexport].Soft = SphP[i].Hsml;
-#endif
-#endif
-	      GravDataGet[nexport].w.OldAcc = P[i].OldAcc;
-	      GravDataIndexTable[nexport].Task = j;
-	      GravDataIndexTable[nexport].Index = i;
-	      GravDataIndexTable[nexport].SortIndex = nexport;
-	      nexport++;
-	      nexportsum++;
-	      nsend_local[j]++;
-	    }
-	}
-    }
-  }
-  tend = second();
-  timetree += timediff(tstart, tend);
-
-  qsort(GravDataIndexTable, nexport, sizeof(struct gravdata_index), grav_tree_compare_key);
-
-  for(j = 0; j < nexport; j++)
-    GravDataIn[j] = GravDataGet[GravDataIndexTable[j].SortIndex];
-
-  for(j = 1, noffset[0] = 0; j < NTask; j++)
-    noffset[j] = noffset[j - 1] + nsend_local[j - 1];
-
-  tstart = second();
-
-  MPI_Allgather(nsend_local, NTask, MPI_INT, nsend, NTask, MPI_INT, MPI_COMM_WORLD);
-
-  tend = second();
-  timeimbalance += timediff(tstart, tend);
-
-
-
   while(ntotleft > 0)
     {
-      if(iter>0){
-	nexport = 0;
-	ndone = 0;
-	for(j = 0; j < NTask; j++)
-	  nsend_local[j] = 0;
+      iter++;
+
+      for(j = 0; j < NTask; j++)
+	nsend_local[j] = 0;
+
+      /* do local particles and prepare export list */
+      tstart = second();
+      ndone = 0;
+      nexport = 0;
+      int oldI = i;
+      //      int lExportflag[NumPart*NTask+NTask];
+      //    int tid;
+      //put in parallel here
+#ifdef _OPENMP
+      double tnthreads = .5*.25/omp_get_max_threads();
+      int csize = ceil((NumPart-oldI)*tnthreads);
+      printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
+#pragma omp parallel for reduction(+:ndone,costtotal) schedule(guided,8)
+#endif
+      for( i=oldI;  i < NumPart ; i++){
+	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
+#ifdef _OPENMP
+	//	if(i==100){
+	//  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
+	//  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
+	//	} 
+#endif
+	if(P[i].Ti_endstep == All.Ti_Current)
+	  {
+	    ndone++;
+
+	    for(j = 0; j < NTask; j++)
+	      Exportflag2[i*NTask+j] = 0; //need to make exportflag local
+#ifndef PMGRID
+	    costtotal += force_treeevaluate(i, 0, &ewaldcount);
+#else
+	    costtotal += force_treeevaluate_shortrange(i, 0);
+#endif
+	  }
+      }
+
+      printf("Numpart %d %d t%d %g \n", NumPart, ndone, ThisTask, second()-tstart);    
+      for(i = oldI; i< NumPart; i++){
+	if(P[i].Ti_endstep==All.Ti_Current){
+	  
+	    for(j = 0; j < NTask; j++)
+	      {
+		if(Exportflag2[i*NTask+j])
+		  {
+		    for(k = 0; k < 3; k++)
+		      GravDataGet[nexport].u.Pos[k] = P[i].Pos[k];
+#ifdef UNEQUALSOFTENINGS
+		    GravDataGet[nexport].Type = P[i].Type;
+#ifdef ADAPTIVE_GRAVSOFT_FORGAS
+		    if(P[i].Type == 0)
+		      GravDataGet[nexport].Soft = SphP[i].Hsml;
+#endif
+#endif
+		    GravDataGet[nexport].w.OldAcc = P[i].OldAcc;
+		    GravDataIndexTable[nexport].Task = j;
+		    GravDataIndexTable[nexport].Index = i;
+		    GravDataIndexTable[nexport].SortIndex = nexport;
+		    nexport++;
+		    nexportsum++;
+		    nsend_local[j]++;
+		  }
+	      }
+	  }
+      }
+      tend = second();
+      timetree += timediff(tstart, tend);
 
       qsort(GravDataIndexTable, nexport, sizeof(struct gravdata_index), grav_tree_compare_key);
 
@@ -316,9 +304,7 @@ void gravity_tree(void)
 
       tend = second();
       timeimbalance += timediff(tstart, tend);
-      }
-      iter++;
-      
+
       /* now do the particles that need to be exported */
     
       for(level = 1; level < (1 << PTask); level++)
@@ -365,6 +351,7 @@ void gravity_tree(void)
 	
 	  tstart = second();
 #ifdef _OPENMP
+	  csize = ceil(nbuffer[ThisTask]*tnthreads);
 #pragma omp parallel for reduction(+:costtotal)  schedule(guided,8)
 #endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
