@@ -133,10 +133,8 @@ void allocate_memory(void)
 	endrun(99939);
       }
       if(ThisTask ==0){
-	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPartSph, Al\
-	       l.BunchSizeHydro - NTask);
-	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPart, Al\
-	       l.BunchSizeForce - NTask);
+	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPartSph, All.BunchSizeHydro - NTask);
+	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPart, All.BunchSizeForce - NTask);
 
       }
 
