@@ -77,7 +77,7 @@ void compute_potential(void)
 
   i = 0;			/* beginn with this index */
   ntotleft = ntot;		/* particles left for all tasks together */
-
+  int oldI = i;
   while(ntotleft > 0)
     {
       for(j = 0; j < NTask; j++)
@@ -86,12 +86,9 @@ void compute_potential(void)
       /* do local particles and prepare export list */
       //for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
       nexport = 0;
-      int oldI = i;
+
       ndone = 0;
 #ifdef _OPENMP
-      double tnthreads = .5*.25/omp_get_max_threads();
-      int csize = ceil((NumPart-oldI)*tnthreads);
-      printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
 #pragma omp parallel for reduction(+:ndone) schedule(guided,8)
 #endif
       for( i=oldI;  i < NumPart ; i++)
