@@ -182,7 +182,6 @@ void compute_potential(void)
 		  nbuffer[j] += nsend[(j ^ ngrp) * NTask + j];
 	    }
 #ifdef _OPENMP
-	  csize = ceil(nbuffer[ThisTask]*tnthreads);
 #pragma omp parallel for  schedule(guided,8)
 #endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
