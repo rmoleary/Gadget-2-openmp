@@ -214,8 +214,7 @@ void gravity_tree(void)
 
   i = 0;			/* beginn with this index */
   ntotleft = ntot;		/* particles left for all tasks together */
-  // omp_set_dynamic(0); 
-  //  omp_set_num_threads(4);
+  int oldI = i;
   while(ntotleft > 0)
     {
       iter++;
@@ -227,30 +226,16 @@ void gravity_tree(void)
       tstart = second();
       ndone = 0;
       nexport = 0;
-      int oldI = i;
-      //      int lExportflag[NumPart*NTask+NTask];
-      //    int tid;
-      //put in parallel here
 #ifdef _OPENMP
-      double tnthreads = .5*.25/omp_get_max_threads();
-      int csize = ceil((NumPart-oldI)*tnthreads);
-      printf("csize %d, tnthreads %g chunks %g \n", csize,tnthreads, 1.*(NumPart-oldI)/csize);
 #pragma omp parallel for reduction(+:ndone,costtotal) schedule(guided,8)
 #endif
       for( i=oldI;  i < NumPart ; i++){
-	//      for(nexport = 0, ndone = 0; i < NumPart && nexport < All.BunchSizeForce - NTask; i++)
-#ifdef _OPENMP
-	//	if(i==100){
-	//  printf("#opcheck %d %d %d\n", omp_get_thread_num(),omp_get_num_threads(), NumPart - i);
-	//  printf("#proc %d threads %d maxt %d inpar %d dyn %d nest %d\n",omp_get_num_procs(),omp_get_num_threads(),omp_get_max_threads(),omp_in_parallel(),omp_get_dynamic(),omp_get_nested());
-	//	} 
-#endif
 	if(P[i].Ti_endstep == All.Ti_Current)
 	  {
 	    ndone++;
 
 	    for(j = 0; j < NTask; j++)
-	      Exportflag2[i*NTask+j] = 0; //need to make exportflag local
+	      Exportflag2[i*NTask+j] = 0; 
 #ifndef PMGRID
 	    costtotal += force_treeevaluate(i, 0, &ewaldcount);
 #else
@@ -287,6 +272,7 @@ void gravity_tree(void)
 	      }
 	  }
       }
+      oldI = NumPart;
       tend = second();
       timetree += timediff(tstart, tend);
 
@@ -351,7 +337,6 @@ void gravity_tree(void)
 	
 	  tstart = second();
 #ifdef _OPENMP
-	  csize = ceil(nbuffer[ThisTask]*tnthreads);
 #pragma omp parallel for reduction(+:costtotal)  schedule(guided,8)
 #endif
 	  for(j = 0; j < nbuffer[ThisTask]; j++)

@@ -255,7 +255,6 @@ void hydro_force(void)
 #ifdef _OPENMP
 #pragma omp parallel for schedule(guided,8)
 #endif
-	  //	  printf("nbuf %d\n",nbuffer[ThisTask]);
 	  for(j = 0; j < nbuffer[ThisTask]; j++)
 	    hydro_evaluate(j, 1);
 	  tend = second();

@@ -82,7 +82,11 @@ void allocate_commbuffers(void)
   DomainPartBuf = (struct particle_data *) CommBuffer;
   DomainSphBuf = (struct sph_particle_data *) (DomainPartBuf + All.BunchSizeDomain);
   DomainKeyBuf = (peanokey *) (DomainSphBuf + All.BunchSizeDomain);
-
+  
+  if(All.BunchSizeHydro - NTask < All.MaxPart){
+    printf("\n Not enough memory in the buffer! hydro buffer size %d  maxpart %d\n",All.BunchSizeHydro - NTask, All.MaxPart);
+    endrun(99939);
+  }
 
   if(ThisTask == 0)
     {
