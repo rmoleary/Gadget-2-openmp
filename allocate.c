@@ -95,6 +95,7 @@ void allocate_commbuffers(void)
       printf("Communication buffer has room for %d particles in density computation\n", All.BunchSizeDensity);
       printf("Communication buffer has room for %d particles in hydro computation\n", All.BunchSizeHydro);
       printf("Communication buffer has room for %d particles in domain decomposition\n", All.BunchSizeDomain);
+      printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPart, All.BunchSizeHydro - NTask);
       printf("\n");
     }
 }
