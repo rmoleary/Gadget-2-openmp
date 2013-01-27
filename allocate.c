@@ -83,10 +83,6 @@ void allocate_commbuffers(void)
   DomainSphBuf = (struct sph_particle_data *) (DomainPartBuf + All.BunchSizeDomain);
   DomainKeyBuf = (peanokey *) (DomainSphBuf + All.BunchSizeDomain);
   
-  if(All.BunchSizeHydro - NTask < All.MaxPart){
-    printf("\n Not enough memory in the buffer! hydro buffer size %d  maxpart %d\n",All.BunchSizeHydro - NTask, All.MaxPart);
-    endrun(99939);
-  }
 
   if(ThisTask == 0)
     {
@@ -95,7 +91,6 @@ void allocate_commbuffers(void)
       printf("Communication buffer has room for %d particles in density computation\n", All.BunchSizeDensity);
       printf("Communication buffer has room for %d particles in hydro computation\n", All.BunchSizeHydro);
       printf("Communication buffer has room for %d particles in domain decomposition\n", All.BunchSizeDomain);
-      printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPart, All.BunchSizeHydro - NTask);
       printf("\n");
     }
 }
@@ -128,6 +123,24 @@ void allocate_memory(void)
 	printf("\nAllocated %g MByte for particle storage. %d\n\n", bytes_tot / (1024.0 * 1024.0), sizeof(struct particle_data));
  	printf("\nAllocated %g MByte for exportflag storage. %d %d %d\n\n", bytes / (1024.0 * 1024.0),NTask,All.MaxPart, sizeof(char));
       }
+
+      if(All.BunchSizeForce - NTask < All.MaxPart){
+	printf("\n Not enough memory in the buffer! force buffer size %d  maxpart %d\n",All.BunchSizeforce - NTask, All.MaxPart);
+	endrun(99949);
+      }
+      if(All.BunchSizeHydro - NTask < All.MaxPartSph){
+	printf("\n Not enough memory in the buffer! hydro buffer size %d  maxpart %d\n",All.BunchSizeHydro - NTask, All.MaxPartSph);
+	endrun(99939);
+      }
+      if(ThisTask ==0){
+	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPartSph, Al\
+	       l.BunchSizeHydro - NTask);
+	printf("Maximum Number of Particles should be less the communication buffer - NTask  %d < %d\n", All.MaxPart, Al\
+	       l.BunchSizeForce - NTask);
+
+      }
+
+      
     }
   
   if(All.MaxPartSph > 0)
