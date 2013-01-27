@@ -125,7 +125,7 @@ void allocate_memory(void)
       }
 
       if(All.BunchSizeForce - NTask < All.MaxPart){
-	printf("\n Not enough memory in the buffer! force buffer size %d  maxpart %d\n",All.BunchSizeforce - NTask, All.MaxPart);
+	printf("\n Not enough memory in the buffer! force buffer size %d  maxpart %d\n",All.BunchSizeForce - NTask, All.MaxPart);
 	endrun(99949);
       }
       if(All.BunchSizeHydro - NTask < All.MaxPartSph){
