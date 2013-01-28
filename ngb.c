@@ -128,8 +128,7 @@ int ngb_treefind_pairs(FLOAT searchcenter[3], FLOAT hsml, int *startnode,int tar
 	  if(P[p].Pos[2] > (searchmax[2] + hdiff))
 	    continue;
 #endif
-	  Ngblist[tid*MAX_NGB+numngb] = p;
-	  numngb++;
+	  Ngblist[tid*MAX_NGB+numngb++] = p;
 	  if(numngb == MAX_NGB)
 	    {
 	      printf
