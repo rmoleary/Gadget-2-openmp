@@ -539,7 +539,7 @@ extern struct particle_data
                                      allowing to guess whether a decrease/increase of the timestep should occur
                                      in the timestep that is started. */
 #endif
-  FLOAT Stridecheck;
+  //  FLOAT Stridecheck;
 }
  *P,              /*!< holds particle data on local processor */
  *DomainPartBuf;  /*!< buffer for particle data used in domain decomposition */
