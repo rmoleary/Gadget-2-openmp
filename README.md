@@ -1,5 +1,5 @@
 # Gadget-2-openmp
-This is a modified version of Gadget-2 with a hybrid (openmp+MPI) paralellization scheme.  Gadget-2 is originally available from http://wwwmpa.mpa-garching.mpg.de/gadget/right.html .
+This is a modified version of Gadget-2 with a hybrid (openmp+MPI) paralellization scheme for tidal disruption simulations.  Gadget-2 is originally available from http://wwwmpa.mpa-garching.mpg.de/gadget/right.html .
 
 It has been modified to include an openmp parallelization routine in the Gravity and Hydro solvers, in parts following MPJ Express Meets Gadget: Towards a Java Code for Cosmological Simulations (https://doi.org/10.1007/11846802_50 or http://mpj-express.org/docs/papers/mpj-gadget-parsim06.pdf) 
 
